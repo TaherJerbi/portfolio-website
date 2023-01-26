@@ -8,20 +8,19 @@ import ClientOnly from "../client-only";
 export default function DragWindow() {
   const controls = useDragControls();
   const iconControls = useDragControls();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
+  const onOpen = () => {
+    setOpen(true);
+  };
+  const onClose = () => {
+    setOpen(false);
+  };
 
   return (
     <ClientOnly>
       <motion.div
-        onClick={() => setOpen(true)}
+        onClick={onOpen}
         className="absolute z-10 bottom-20 right-5 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red"
-        initial={{
-          width: "0px",
-          height: "0px",
-          opacity: 0,
-          x: 10,
-          y: 10,
-        }}
         animate={{
           width: open ? "0px" : "40px",
           height: open ? "0px" : "40px",
@@ -31,13 +30,7 @@ export default function DragWindow() {
         }}
         transition={{
           duration: 0.5,
-        }}
-        exit={{
-          width: "0px",
-          height: "0px",
-          opacity: 0,
-          x: 10,
-          y: 10,
+          ease: "easeInOut",
         }}
         dragControls={iconControls}
         onPointerDown={(e) => {
@@ -54,14 +47,25 @@ export default function DragWindow() {
         <MessageCircle className="stroke-[2px] w-full h-full fill-brand-beige-light" />
       </motion.div>
       <motion.div
-        animate={{
-          width: open ? "fit-content" : "0%",
-          height: open ? "fit-content" : "0%",
-          opacity: open ? 1 : 0,
-          x: open ? undefined : 10,
-          y: open ? undefined : 10,
+        initial={{
+          width: "0px",
+          height: "0px",
+          opacity: 0,
+          x: 100,
+          y: 100,
         }}
-        className="absolute bottom-20 right-10 z-10 overflow-hidden"
+        animate={{
+          width: open ? "300px" : "0px",
+          height: open ? "250px" : "0px",
+          opacity: open ? 1 : 0,
+          x: open ? 0 : 100,
+          y: open ? 0 : 100,
+        }}
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-20 right-10 z-20 p-3 overflow-hidden"
         dragControls={controls}
         onPointerDown={(e) => {
           controls.start(e);
@@ -78,9 +82,9 @@ export default function DragWindow() {
           bounceStiffness: 800,
         }}
       >
-        <WindowCard title="Drag Me!" onClose={() => setOpen(false)}>
+        <WindowCard title="Drag Me!" onClose={onClose}>
           <div className="px-10 py-10">
-            <p className="text-xl font-bold leading-8 whitespace-nowrap">
+            <p className="text-xl text-center font-bold leading-8 whitespace-nowrap">
               Let`s connect!
             </p>
             <div className="flex justify-between mt-4">

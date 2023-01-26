@@ -6,10 +6,12 @@ import Nav from "@/components/nav";
 export default function Home() {
   return (
     <div>
-      <div className="relative flex flex-col h-screen w-screen bg-brand-beige-light">
+      <div className="relative flex flex-col min-h-screen w-screen bg-brand-beige-light overflow-hidden">
         <DragWindow />
-        <Nav />
-        <Presentation />
+        <div className="relative h-full w-full">
+          <Nav />
+          <Presentation />
+        </div>
       </div>
       <About />
     </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { classList } from "@/utils";
 
 type ButtonProps = {

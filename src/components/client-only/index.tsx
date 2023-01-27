@@ -1,14 +1,14 @@
-// Client only
+"use client";
 
-import React from "react";
+import { useEffect, useState } from "react";
 
 export default function ClientOnly({
   children,
   ...delegated
 }: React.PropsWithChildren<{}>) {
-  const [hasMounted, setHasMounted] = React.useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setHasMounted(typeof window !== "undefined");
   }, []);
 

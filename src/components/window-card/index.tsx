@@ -1,5 +1,3 @@
-"use client";
-
 import { classList } from "@/utils";
 import { X } from "react-feather";
 

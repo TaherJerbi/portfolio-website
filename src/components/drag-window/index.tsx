@@ -16,7 +16,7 @@ export default function DragWindow() {
   };
 
   return (
-    <>
+    <div className="absolute bottom-0 right-0">
       <motion.div
         onClick={onOpen}
         className="absolute z-10 bottom-20 right-5 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red shadow-brand-sm hover:shadow-brand-md transition-shadow duration-300 ease-in-out"
@@ -108,6 +108,6 @@ export default function DragWindow() {
           </div>
         </WindowCard>
       </motion.div>
-    </>
+    </div>
   );
 }

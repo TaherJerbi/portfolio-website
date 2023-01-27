@@ -12,7 +12,9 @@ enum ActiveImage {
   BOTH = "both",
 }
 export default function ProjectImages({ project }: { project: Project }) {
-  const [activeImage, setActiveImage] = useState(ActiveImage.DESKTOP);
+  const [activeImage, setActiveImage] = useState(
+    project.desktopImageUrl ? ActiveImage.DESKTOP : ActiveImage.MOBILE
+  );
   return (
     <div className="flex flex-col justify-between h-full">
       <div className="flex justify-center items-center h-[400px]">
@@ -53,7 +55,7 @@ export default function ProjectImages({ project }: { project: Project }) {
             className="mb-5"
           >
             <Image
-              className=" rounded-3xl shadow-brand-lg border-brand-blue-dark border-4 hover:scale-150"
+              className=" rounded-3xl shadow-brand-lg border-brand-blue-dark border-4"
               src={project.desktopImageUrl}
               width={500}
               height={320}
@@ -62,34 +64,36 @@ export default function ProjectImages({ project }: { project: Project }) {
           </motion.div>
         )}
       </div>
-      <div className="flex justify-center items-stretch mt-10">
-        <button
-          onClick={() => {
-            setActiveImage(ActiveImage.MOBILE);
-          }}
-          className={classList([
-            "text-sm font-bold py-4 px-4 h-fit border-brand-blue-dark border-2 transition duration-500 ease-in-out",
-            activeImage === ActiveImage.MOBILE
-              ? "bg-brand-blue-dark text-white"
-              : "",
-          ])}
-        >
-          Mobile
-        </button>
-        <button
-          onClick={() => {
-            setActiveImage(ActiveImage.DESKTOP);
-          }}
-          className={classList([
-            "text-sm font-bold py-4 px-4 h-fit border-brand-blue-dark border-2 transition duration-500 ease-in-out",
-            activeImage === ActiveImage.DESKTOP
-              ? "bg-brand-blue-dark text-white"
-              : "",
-          ])}
-        >
-          Desktop
-        </button>
-      </div>
+      {project.desktopImageUrl && project.mobileImageUrl && (
+        <div className="flex justify-center items-stretch mt-10">
+          <button
+            onClick={() => {
+              setActiveImage(ActiveImage.MOBILE);
+            }}
+            className={classList([
+              "text-sm font-bold py-4 px-4 h-fit border-brand-blue-dark border-2 transition duration-500 ease-in-out",
+              activeImage === ActiveImage.MOBILE
+                ? "bg-brand-blue-dark text-white"
+                : "",
+            ])}
+          >
+            Mobile
+          </button>
+          <button
+            onClick={() => {
+              setActiveImage(ActiveImage.DESKTOP);
+            }}
+            className={classList([
+              "text-sm font-bold py-4 px-4 h-fit border-brand-blue-dark border-2 transition duration-500 ease-in-out",
+              activeImage === ActiveImage.DESKTOP
+                ? "bg-brand-blue-dark text-white"
+                : "",
+            ])}
+          >
+            Desktop
+          </button>
+        </div>
+      )}
     </div>
   );
 }

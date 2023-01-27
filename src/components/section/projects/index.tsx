@@ -7,7 +7,7 @@ import Image from "next/image";
 
 function ProjectSection({ project }: { project: Project }) {
   return (
-    <div className="grid grid-cols-4 gap-10">
+    <div className="grid grid-cols-4 gap-10 mb-20 md:mb-40">
       <div className="md:col-span-2 col-span-3">
         <div className="flex justify-between items-center mb-8 flex-wrap space-y-2">
           <h1 className="text-2xl font-bold ">{project.title}</h1>
@@ -47,9 +47,11 @@ function ProjectSection({ project }: { project: Project }) {
           ))}
         </div>
       </div>
-      <div className="md:col-span-2 col-span-3">
-        <ProjectImages project={project} />
-      </div>
+      {(project.desktopImageUrl || project.mobileImageUrl) && (
+        <div className="md:col-span-2 col-span-3">
+          <ProjectImages project={project} />
+        </div>
+      )}
     </div>
   );
 }

@@ -52,24 +52,24 @@ export const SKILLS: Skill[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  //   {
-  //     id: "1",
-  //     title: "Portfolio",
-  //     description: "This portfolio website",
-  //     skills: getSkillsByIds(["react", "typescript", "nextjs", "framer-motion"]),
-  //     sections: [
-  //       {
-  //         title: "Purpose of this project",
-  //         description: "To showcase my skills and projects",
-  //       },
-  //       {
-  //         title: "What I learned",
-  //         description:
-  //           "I learned Framer Motion and tried Next.js 13 and the experiemental appDir for the first time",
-  //       },
-  //     ],
-  //     githubUrl: "https://github.com/TaherJerbi/portfolio-website",
-  //   },
+  {
+    id: "1",
+    title: "Portfolio",
+    description: "This portfolio website",
+    skills: getSkillsByIds(["react", "typescript", "nextjs", "framer-motion"]),
+    sections: [
+      {
+        title: "Purpose of this project",
+        description: "To showcase my skills and projects",
+      },
+      {
+        title: "What I learned",
+        description:
+          "I learned Framer Motion and tried Next.js 13 and the experiemental appDir for the first time",
+      },
+    ],
+    githubUrl: "https://github.com/TaherJerbi/portfolio-website",
+  },
   {
     id: "2",
     title: "Design Curated",

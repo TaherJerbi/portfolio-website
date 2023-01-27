@@ -9,7 +9,6 @@ html {
 
 @layer base {
   html {
-    font-family: PT Mono, system-ui, sans-serif;
     color: #31312b;
   }
 }

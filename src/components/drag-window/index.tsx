@@ -19,7 +19,7 @@ export default function DragWindow() {
     <div className="absolute bottom-0 right-0">
       <motion.div
         onClick={onOpen}
-        className="absolute z-10 bottom-20 right-20 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red shadow-brand-sm hover:shadow-brand-md transition-shadow duration-300 ease-in-out"
+        className="absolute z-10 bottom-20 right-5 md:right-20 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red shadow-brand-sm hover:shadow-brand-md transition-shadow duration-300 ease-in-out"
         initial={{
           width: "0",
           height: "0",
@@ -89,7 +89,7 @@ export default function DragWindow() {
         <WindowCard drag title="Drag Me!" onClose={onClose}>
           <div className="px-10 pt-8 h-full">
             <p className="text-xl text-center font-bold leading-8 whitespace-nowrap">
-              Let`s connect!
+              Let&apos;s connect!
             </p>
             <div className="flex justify-between mt-4">
               <a

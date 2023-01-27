@@ -4,6 +4,7 @@ import About from "@/components/hero/about";
 import Presentation from "@/components/hero/presentation";
 import TriangeDown from "@/components/icons/triange-down";
 import Nav from "@/components/nav";
+import WindowCard from "@/components/window-card";
 
 export default function Home() {
   return (
@@ -12,9 +13,13 @@ export default function Home() {
         <ClientOnly>
           <DragWindow />
         </ClientOnly>
-        <div className="relative h-full w-full">
+        <div className="relative flex flex-col flex-grow w-full">
           <Nav />
-          <Presentation />
+          <div className="px-10 flex-grow flex justify-center items-center">
+            <div className=" mb-20">
+              <Presentation />
+            </div>
+          </div>
         </div>
         <a
           href="#about"

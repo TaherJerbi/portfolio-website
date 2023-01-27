@@ -20,7 +20,7 @@ export default function DragWindow() {
     <ClientOnly>
       <motion.div
         onClick={onOpen}
-        className="absolute z-10 bottom-20 right-5 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red"
+        className="absolute z-10 bottom-20 right-5 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red shadow-brand-sm hover:shadow-brand-md transition-shadow duration-300 ease-in-out"
         animate={{
           width: open ? "0px" : "40px",
           height: open ? "0px" : "40px",
@@ -56,7 +56,7 @@ export default function DragWindow() {
         }}
         animate={{
           width: open ? "300px" : "0px",
-          height: open ? "250px" : "0px",
+          height: open ? "220px" : "0px",
           opacity: open ? 1 : 0,
           x: open ? 0 : 100,
           y: open ? 0 : 100,
@@ -82,15 +82,29 @@ export default function DragWindow() {
           bounceStiffness: 800,
         }}
       >
-        <WindowCard title="Drag Me!" onClose={onClose}>
-          <div className="px-10 py-10">
+        <WindowCard drag title="Drag Me!" onClose={onClose}>
+          <div className="px-10 pt-8 h-full">
             <p className="text-xl text-center font-bold leading-8 whitespace-nowrap">
               Let`s connect!
             </p>
             <div className="flex justify-between mt-4">
-              <Mail className="stroke-[2px] w-8 h-8" />
-              <GitHub className="stroke-[2px] w-8 h-8" />
-              <Linkedin className="stroke-[2px] w-8 h-8" />
+              <a
+                href="https://github.com/TaherJerbi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <GitHub className="stroke-[2px] w-8 h-8 cursor-pointer" />
+              </a>
+              <a href="mailto:jerbi.taherr@gmail.com">
+                <Mail className="stroke-[2px] w-8 h-8 cursor-pointer" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/taherjerbi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Linkedin className="stroke-[2px] w-8 h-8 cursor-pointer" />
+              </a>
             </div>
           </div>
         </WindowCard>

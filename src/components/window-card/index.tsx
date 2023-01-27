@@ -1,20 +1,29 @@
 "use client";
 
+import { classList } from "@/utils";
 import { X } from "react-feather";
 
 type WindowCardProps = {
+  drag?: boolean;
   children: React.ReactNode;
   title: string;
   onClose?: () => void;
 };
 
 export default function WindowCard({
+  drag,
   children,
   title,
   onClose,
 }: WindowCardProps) {
   return (
-    <div className="flex flex-col col-span-1 bg-brand-beige-light h-full w-full border-brand-blue-dark border-4 shadow-brand-lg rounded-xl">
+    <div
+      className={classList({
+        "flex flex-col col-span-1 bg-brand-beige-light h-full w-full border-brand-blue-dark border-4 shadow-brand-lg rounded-xl overflow-hidden":
+          true,
+        "cursor-grab": !!drag,
+      })}
+    >
       <div className="px-2 py-1 flex justify-between items-center">
         <div className="flex space-x-2">
           {!onClose ? (

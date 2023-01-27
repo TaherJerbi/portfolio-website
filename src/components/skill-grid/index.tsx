@@ -1,9 +1,9 @@
 "use client";
 
 import { classList } from "@/utils";
+import { Skill, SkillProficiency } from "@/utils/types";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import SkillCard, { Skill, SkillProficiency } from "../skill-card";
+import SkillCard from "@/components/skill-card";
 
 function SkillGrid({
   skills,

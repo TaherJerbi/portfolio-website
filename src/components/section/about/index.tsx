@@ -3,7 +3,7 @@ import Skills from "./skills";
 export default function About() {
   return (
     <div
-      className="grid grid-cols-1 lg:grid-cols-2 gap-20 min-h-fit w-screen bg-brand-green-light px-10 lg:px-40 xl:px-60 py-10 md:py-20"
+      className="grid grid-cols-1 lg:grid-cols-2 gap-20 min-h-fit w-screen bg-brand-green-light px-10 lg:px-40 2xl:px-60 py-10 md:py-20"
       id="about"
     >
       <div className="w-full h-full col-start-1">

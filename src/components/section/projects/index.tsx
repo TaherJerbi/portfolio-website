@@ -9,8 +9,8 @@ function ProjectSection({ project }: { project: Project }) {
   return (
     <div className="grid grid-cols-4 gap-10 place-items-stretch mb-20 md:mb-40 ">
       <div className="md:col-span-2 col-span-4">
-        <div className="flex justify-between items-center mb-8 flex-wrap space-y-2">
-          <h1 className="text-2xl font-bold ">{project.title}</h1>
+        <div className="flex space-x-5 items-center mb-8 flex-wrap space-y-2">
+          <h1 className="text-2xl font-bold">{project.title}</h1>
           <div className="flex space-x-5">
             {project.liveUrl && (
               <a href={project.liveUrl} target="_blank" rel="noreferrer">

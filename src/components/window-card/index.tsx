@@ -6,43 +6,70 @@ type WindowCardProps = {
   children: React.ReactNode;
   title: string;
   onClose?: () => void;
+  variant?: "default" | "dark";
 };
 
 export default function WindowCard({
   drag,
   children,
   title,
+  variant = "default",
   onClose,
 }: WindowCardProps) {
   return (
     <div
-      className={classList({
-        "flex flex-col col-span-1 bg-brand-beige-light h-full w-full border-brand-blue-dark border-4 shadow-brand-lg rounded-xl overflow-hidden":
-          true,
-        "cursor-grab": !!drag,
-      })}
+      className={classList(
+        "flex flex-col col-span-1 bg-brand-beige-light h-full w-full border-brand-blue-dark border-4 shadow-brand-lg rounded-xl overflow-hidden",
+        {
+          "cursor-grab": !!drag,
+        }
+      )}
     >
-      <div className="px-2 py-1 flex justify-between items-center">
+      <div
+        className={classList("px-2 py-1 flex justify-between items-center", {
+          "bg-brand-blue-dark": variant === "dark",
+        })}
+      >
         <div className="flex space-x-2">
           {!onClose ? (
-            <div className="rounded-full w-5 h-5 border-4 border-brand-blue-dark"></div>
+            <div
+              className={classList(
+                "rounded-full w-5 h-5 border-4 ",
+                variant === "dark"
+                  ? "border-brand-beige-light"
+                  : "border-brand-blue-dark"
+              )}
+            ></div>
           ) : (
             <div
               onClick={onClose}
-              className="rounded-full flex justify-center items-center w-5 h-5 border-4 border-brand-blue-dark bg-brand-red cursor-pointer"
+              className={classList(
+                "rounded-full flex justify-center items-center w-5 h-5 border-4 bg-brand-red cursor-pointer",
+                variant === "dark"
+                  ? "border-brand-beige-light"
+                  : "border-brand-blue-dark"
+              )}
             >
               <X className="w-2 h-2 stroke-brand-beige-light stroke-[4px]" />
             </div>
           )}
-          <div className="rounded-full w-5 h-5 border-4 border-brand-blue-dark"></div>
+          {variant === "default" && (
+            <div className="rounded-full w-5 h-5 border-4 border-brand-blue-dark"></div>
+          )}
         </div>
-        <div className="">
-          <p className="text-xl font-bold">{title}</p>
+        <div>
+          <p
+            className={classList("text-xl font-bold", {
+              "text-brand-beige-light": variant === "dark",
+            })}
+          >
+            {title}
+          </p>
         </div>
         <div></div>
       </div>
       <hr className="border-2 border-brand-blue-dark" />
-      <div className="flex-grow">{children}</div>
+      <div className="flex-grow bg-brand-beige-light">{children}</div>
     </div>
   );
 }

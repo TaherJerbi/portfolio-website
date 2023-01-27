@@ -70,12 +70,13 @@ export default function ProjectImages({ project }: { project: Project }) {
             onClick={() => {
               setActiveImage(ActiveImage.MOBILE);
             }}
-            className={classList([
+            className={classList(
               "text-sm font-bold py-4 px-4 h-fit border-brand-blue-dark border-2 transition duration-500 ease-in-out",
-              activeImage === ActiveImage.MOBILE
-                ? "bg-brand-blue-dark text-white"
-                : "",
-            ])}
+              {
+                "bg-brand-blue-dark text-white":
+                  activeImage === ActiveImage.MOBILE,
+              }
+            )}
           >
             Mobile
           </button>
@@ -83,12 +84,13 @@ export default function ProjectImages({ project }: { project: Project }) {
             onClick={() => {
               setActiveImage(ActiveImage.DESKTOP);
             }}
-            className={classList([
+            className={classList(
               "text-sm font-bold py-4 px-4 h-fit border-brand-blue-dark border-2 transition duration-500 ease-in-out",
-              activeImage === ActiveImage.DESKTOP
-                ? "bg-brand-blue-dark text-white"
-                : "",
-            ])}
+              {
+                "bg-brand-blue-dark text-white":
+                  activeImage === ActiveImage.DESKTOP,
+              }
+            )}
           >
             Desktop
           </button>

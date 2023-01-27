@@ -1,15 +1,19 @@
 export function classList(
-  classes:
+  ...args: (
+    | string
     | string[]
     | {
         [key: string]: boolean;
       }
-) {
-  if (Array.isArray(classes)) {
-    return classes.join(" ");
-  }
-  return Object.entries(classes)
-    .filter(([, value]) => value)
-    .map(([key]) => key)
-    .join(" ");
+  )[]
+): string {
+  const classes = args
+    .map((arg) => {
+      if (Array.isArray(arg)) return arg;
+      if (typeof arg === "string") return arg;
+
+      return Object.keys(arg).filter((key) => arg[key]);
+    })
+    .flat(1);
+  return classes.join(" ");
 }

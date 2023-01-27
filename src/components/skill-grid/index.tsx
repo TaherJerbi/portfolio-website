@@ -32,15 +32,17 @@ function SkillGrid({
           <motion.div
             layout
             key={skill.id}
-            className={classList({
-              "opacity-50":
-                !!highlightedProficiency &&
-                skill.proficiency !== highlightedProficiency,
-              "opacity-100":
-                !highlightedProficiency ||
-                skill.proficiency === highlightedProficiency,
-              "transition-opacity duration-500 ease-in-out": true,
-            })}
+            className={classList(
+              "transition-opacity duration-500 ease-in-out",
+              {
+                "opacity-50":
+                  !!highlightedProficiency &&
+                  skill.proficiency !== highlightedProficiency,
+                "opacity-100":
+                  !highlightedProficiency ||
+                  skill.proficiency === highlightedProficiency,
+              }
+            )}
           >
             <SkillCard onClick={() => setCurrentTop(skill.id)} skill={skill} />
           </motion.div>

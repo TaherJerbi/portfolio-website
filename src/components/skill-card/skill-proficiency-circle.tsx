@@ -30,16 +30,17 @@ export function SkillProficiencyCircle({
   return (
     <div
       onClick={onClick}
-      className={classList({
-        "rounded-full flex justify-center items-center transition 0.2s ease-in-out":
-          true,
-        [getProficiencyColor(proficiency)]: true,
-        "w-2 h-2": size === 2,
-        "shadow-brand-1": !!shadow && size === 2,
-        "w-5 h-5": size === 5,
-        "shadow-brand-xs": !!shadow && size >= 5,
-        "w-8 h-8": size === 8,
-      })}
+      className={classList(
+        "rounded-full flex justify-center items-center transition 0.2s ease-in-out",
+        {
+          [getProficiencyColor(proficiency)]: true,
+          "w-2 h-2": size === 2,
+          "shadow-brand-1": !!shadow && size === 2,
+          "w-5 h-5": size === 5,
+          "shadow-brand-xs": !!shadow && size >= 5,
+          "w-8 h-8": size === 8,
+        }
+      )}
     ></div>
   );
 }

@@ -86,7 +86,7 @@ export default function DragWindow() {
           bounceStiffness: 800,
         }}
       >
-        <WindowCard drag title="Drag Me!" onClose={onClose}>
+        <WindowCard drag title="Drag Me!" onClose={onClose} variant="dark">
           <div className="px-10 pt-8 h-full">
             <p className="text-xl text-center font-bold leading-8 whitespace-nowrap">
               Let&apos;s connect!

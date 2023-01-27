@@ -7,7 +7,7 @@ import { GitHub, Linkedin, Mail, MessageCircle } from "react-feather";
 export default function DragWindow() {
   const controls = useDragControls();
   const iconControls = useDragControls();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const onOpen = () => {
     setOpen(true);
   };
@@ -19,13 +19,17 @@ export default function DragWindow() {
     <div className="absolute bottom-0 right-0">
       <motion.div
         onClick={onOpen}
-        className="absolute z-10 bottom-20 right-5 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red shadow-brand-sm hover:shadow-brand-md transition-shadow duration-300 ease-in-out"
+        className="absolute z-10 bottom-20 right-20 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red shadow-brand-sm hover:shadow-brand-md transition-shadow duration-300 ease-in-out"
+        initial={{
+          width: "0",
+          height: "0",
+          opacity: 0,
+        }}
         animate={{
-          width: open ? "0px" : "40px",
-          height: open ? "0px" : "40px",
+          width: open ? "0px" : "50px",
+          height: open ? "0px" : "50px",
           opacity: open ? 0 : 1,
-          x: open ? 10 : undefined,
-          y: open ? 10 : undefined,
+          x: open ? 100 : undefined,
         }}
         transition={{
           duration: 0.5,
@@ -78,6 +82,7 @@ export default function DragWindow() {
         }}
         dragTransition={{
           bounceDamping: 30,
+          power: 0.1,
           bounceStiffness: 800,
         }}
       >

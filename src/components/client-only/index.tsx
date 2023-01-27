@@ -9,7 +9,7 @@ export default function ClientOnly({
   const [hasMounted, setHasMounted] = React.useState(false);
 
   React.useEffect(() => {
-    setHasMounted(true);
+    setHasMounted(typeof window !== "undefined");
   }, []);
 
   if (!hasMounted) {

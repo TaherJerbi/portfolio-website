@@ -1,6 +1,5 @@
 import Button from "@/components/button";
 import Image from "next/image";
-
 export default function Presentation() {
   return (
     <div className="relative flex flex-col md:flex-row justify-center">

@@ -1,61 +1,13 @@
 "use client";
-import {
-  Skill,
-  SkillProficiency,
-  SkillProficiencyCircle,
-} from "@/components/skill-card";
+
+import { SkillProficiencyCircle } from "@/components/skill-card/skill-proficiency-circle";
 import SkillGrid from "@/components/skill-grid";
 import { Tooltip } from "@/components/tooltip";
+import { SKILLS } from "@/data";
+import { SkillProficiency } from "@/utils/types";
 import { useState } from "react";
 import { BarChart } from "react-feather";
 
-const SKILLS: Skill[] = [
-  {
-    title: "React",
-    proficiency: SkillProficiency.Advanced,
-    id: "react",
-  },
-  {
-    title: "Typescript",
-    proficiency: SkillProficiency.Advanced,
-    id: "typescript",
-  },
-  {
-    title: "Javascript",
-    proficiency: SkillProficiency.Expert,
-    id: "javascript",
-  },
-  {
-    title: "Next.js",
-    proficiency: SkillProficiency.Advanced,
-    id: "nextjs",
-  },
-  {
-    title: "Node.js",
-    proficiency: SkillProficiency.Advanced,
-    id: "nodejs",
-  },
-  {
-    title: "Express.js",
-    proficiency: SkillProficiency.Intermediate,
-    id: "expressjs",
-  },
-  {
-    title: "PostgreSQL",
-    proficiency: SkillProficiency.Intermediate,
-    id: "postgresql",
-  },
-  {
-    title: "GraphQL",
-    proficiency: SkillProficiency.Advanced,
-    id: "graphql",
-  },
-  {
-    title: "Rust",
-    proficiency: SkillProficiency.Beginner,
-    id: "rust",
-  },
-];
 export default function Skills() {
   const [skills, setSkills] = useState(SKILLS);
   const [highlightedProficiency, setHighlightedProficiency] = useState<
@@ -93,11 +45,11 @@ export default function Skills() {
           <p className="text-3xl font-bold text-brand-blue">Skills</p>
           <Tooltip
             text="Sort"
-            className="bg-brand-blue text-brand-beige-light font-bold"
+            className="bg-brand-blue text-brand-beige-light font-bold text-sm -ml-2"
           >
             <BarChart
               onClick={sortByProficiency}
-              className="text-brand-blue stroke-[3px] cursor-pointer"
+              className="text-brand-blue h-8 w-8 stroke-[3px] cursor-pointer p-1 rounded-full border-brand-blue border-2 hover:bg-brand-beige-light transition duration-100 ease-in-out"
             />
           </Tooltip>
         </div>

@@ -13,6 +13,8 @@ module.exports = {
         "brand-beige-ecru": "#FFD6AD",
       },
       boxShadow: {
+        "brand-1": "1px 1px 0px #1C1D1F",
+        "brand-xs": "3px 3px 0px #1C1D1F",
         "brand-sm": "5px 5px 0px #1C1D1F",
         "brand-md": "7px 7px 0px #1C1D1F",
         "brand-lg": "10px 10px 0px #1C1D1F",

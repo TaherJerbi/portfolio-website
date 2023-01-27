@@ -1,6 +1,5 @@
-import SkillCard from "@/components/skill-card";
 import WindowCard from "@/components/window-card";
-
+import Skills from "./skills";
 export default function About() {
   return (
     <div
@@ -38,25 +37,7 @@ export default function About() {
       </div>
 
       <div className="col-start-1 lg:col-start-2 row-start-1">
-        <p className="text-3xl mx-3 font-bold text-brand-blue">Skills (24)</p>
-        <div className="flex flex-wrap mt-12">
-          <SkillCard title="React" />
-          <SkillCard title="Typescript" />
-          <SkillCard title="NodeJS" />
-          <SkillCard title="Express" />
-          <SkillCard title="MongoDB" />
-          <SkillCard title="MySQL" />
-          <SkillCard title="Git" />
-          <SkillCard title="Docker" />
-          <SkillCard title="React" />
-          <SkillCard title="Typescript" />
-          <SkillCard title="NodeJS" />
-          <SkillCard title="Express" />
-          <SkillCard title="MongoDB" />
-          <SkillCard title="MySQL" />
-          <SkillCard title="Git" />
-          <SkillCard title="Docker" />
-        </div>
+        <Skills />
       </div>
     </div>
   );

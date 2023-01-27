@@ -4,25 +4,30 @@ import { classList } from "@/utils";
 import { Skill, SkillProficiency } from "@/utils/types";
 import { motion } from "framer-motion";
 import SkillCard from "@/components/skill-card";
+import { useEffect, useState } from "react";
 
 function SkillGrid({
   skills,
-  setSkills,
   highlightedProficiency,
 }: {
   skills: Skill[];
-  setSkills: (skills: Skill[]) => void;
   highlightedProficiency?: SkillProficiency;
 }) {
+  const [internalSkills, setSkills] = useState(skills);
   const setCurrentTop = (id: string) => {
     const newSkillState = [...skills].sort((a, b) =>
       a.id === id ? -1 : b.id === id ? 1 : 0
     );
     setSkills(newSkillState);
   };
+
+  useEffect(() => {
+    setSkills(skills);
+  }, [skills]);
+
   return (
-    <div className="flex flex-wrap mt-12">
-      {skills.map((skill) => {
+    <div className="flex flex-wrap">
+      {internalSkills.map((skill) => {
         return (
           <motion.div
             layout

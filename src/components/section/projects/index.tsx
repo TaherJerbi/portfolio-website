@@ -1,9 +1,9 @@
 import Button from "@/components/button";
 import ProjectImages from "@/components/project-images";
 import SkillCard from "@/components/skill-card";
+import SkillGrid from "@/components/skill-grid";
 import { PROJECTS } from "@/data";
 import { Project } from "@/utils/types";
-import Image from "next/image";
 
 function ProjectSection({ project }: { project: Project }) {
   return (
@@ -41,10 +41,8 @@ function ProjectSection({ project }: { project: Project }) {
             <p className="text-xl">{section.description}</p>
           </div>
         ))}
-        <div className="flex mt-2 -ml-3 space-x-3 flex-wrap">
-          {project.skills.map((skill) => (
-            <SkillCard key={skill.id} skill={skill} />
-          ))}
+        <div className="flex mt-5 -ml-3 space-x-3 flex-wrap">
+          <SkillGrid skills={project.skills} />
         </div>
       </div>
       {(project.desktopImageUrl || project.mobileImageUrl) && (

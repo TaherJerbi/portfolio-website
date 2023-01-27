@@ -5,7 +5,7 @@ import SkillGrid from "@/components/skill-grid";
 import { Tooltip } from "@/components/tooltip";
 import { SKILLS } from "@/data";
 import { SkillProficiency } from "@/utils/types";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { BarChart } from "react-feather";
 
 export default function Skills() {
@@ -14,20 +14,25 @@ export default function Skills() {
     SkillProficiency | undefined
   >(undefined);
 
+  const sortedSkills = useMemo(
+    () =>
+      [...SKILLS].sort((a, b) =>
+        a.proficiency === undefined || b.proficiency === undefined
+          ? 0
+          : a.proficiency > b.proficiency
+          ? -1
+          : a.proficiency &&
+            b.proficiency &&
+            a.proficiency === b.proficiency &&
+            a.title > b.title
+          ? -1
+          : 1
+      ),
+    []
+  );
+
   const sortByProficiency = () => {
-    const newSkills = [...skills].sort((a, b) =>
-      a.proficiency === undefined || b.proficiency === undefined
-        ? 0
-        : a.proficiency > b.proficiency
-        ? -1
-        : a.proficiency &&
-          b.proficiency &&
-          a.proficiency === b.proficiency &&
-          a.title > b.title
-        ? -1
-        : 1
-    );
-    setSkills(newSkills);
+    setSkills([...sortedSkills]);
   };
 
   const toggleProficiency = (proficiency: SkillProficiency) => {
@@ -99,11 +104,10 @@ export default function Skills() {
         </Tooltip>
       </div>
 
-      <div className="flex flex-wrap">
+      <div className="mt-12">
         <SkillGrid
           highlightedProficiency={highlightedProficiency}
           skills={skills}
-          setSkills={setSkills}
         />
       </div>
     </>

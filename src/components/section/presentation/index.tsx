@@ -8,14 +8,14 @@ import Presentation from "./presentation";
 
 export default function PresentationSection() {
   return (
-    <div className="relative flex flex-col min-h-screen w-screen bg-brand-beige-light overflow-hidden">
-      <ClientOnly>
-        <DragWindow />
-      </ClientOnly>
+    <div
+      id="presentation"
+      className="relative flex flex-col min-h-screen w-screen bg-brand-beige-light overflow-hidden"
+    >
       <div className="relative flex flex-col flex-grow w-full">
         <Nav />
         <div className="px-10 flex-grow flex justify-center items-center">
-          <div className=" mb-20">
+          <div className="mb-40 md:mb:20">
             <Presentation />
           </div>
         </div>

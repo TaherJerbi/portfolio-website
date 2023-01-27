@@ -5,14 +5,14 @@ export default function Nav() {
         <a className="hover:underline font-semibold" href={"#about"}>
           about
         </a>
-        <a className="hover:underline font-semibold" href={"#about"}>
+        <a className="hover:underline font-semibold" href={"#projects"}>
           projects
         </a>
-        <a className="hover:underline font-semibold" href={"#about"}>
+        <a className="hover:underline font-semibold" href={"#contact"}>
           contact
         </a>
       </div>
-      <a className="hover:underline font-semibold" href={"#about"}>
+      <a className="hover:underline font-semibold" href={"#presentation"}>
         resume
       </a>
     </nav>

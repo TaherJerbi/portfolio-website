@@ -19,9 +19,11 @@ export default function Presentation() {
           from Tunis, Tunisia 🇹🇳.
         </p>
         <div className="flex justify-center md:justify-start pt-10">
-          <Button variant="blue" fontSize="text-2xl">
-            see my work
-          </Button>
+          <a href="#projects">
+            <Button variant="blue" fontSize="text-2xl">
+              see my work
+            </Button>
+          </a>
         </div>
       </div>
     </div>

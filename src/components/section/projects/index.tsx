@@ -56,7 +56,10 @@ function ProjectSection({ project }: { project: Project }) {
 
 function ProjectsSection() {
   return (
-    <div className="min-h-screen w-full bg-brand-beige-light px-10 lg:px-40 py-10 md:py-20">
+    <div
+      id="projects"
+      className="min-h-screen w-full bg-brand-beige-light px-10 lg:px-40 py-10 md:py-20"
+    >
       <h1 className="text-4xl font-bold mb-20">Projects</h1>
       {PROJECTS.map((project) => (
         <ProjectSection key={project.id} project={project} />

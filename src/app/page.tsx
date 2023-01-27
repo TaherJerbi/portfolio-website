@@ -1,4 +1,4 @@
-"user client";
+"use client";
 
 import DragWindow from "@/components/drag-window";
 import About from "@/components/hero/about";

@@ -1,3 +1,5 @@
+"user client";
+
 import DragWindow from "@/components/drag-window";
 import About from "@/components/hero/about";
 import Presentation from "@/components/hero/presentation";

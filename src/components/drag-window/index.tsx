@@ -4,7 +4,6 @@ import WindowCard from "@/components/window-card";
 import { useDragControls, motion } from "framer-motion";
 import { useState } from "react";
 import { GitHub, Linkedin, Mail, MessageCircle } from "react-feather";
-import ClientOnly from "../client-only";
 export default function DragWindow() {
   const controls = useDragControls();
   const iconControls = useDragControls();
@@ -17,7 +16,7 @@ export default function DragWindow() {
   };
 
   return (
-    <ClientOnly>
+    <>
       <motion.div
         onClick={onOpen}
         className="absolute z-10 bottom-20 right-5 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red shadow-brand-sm hover:shadow-brand-md transition-shadow duration-300 ease-in-out"
@@ -109,6 +108,6 @@ export default function DragWindow() {
           </div>
         </WindowCard>
       </motion.div>
-    </ClientOnly>
+    </>
   );
 }

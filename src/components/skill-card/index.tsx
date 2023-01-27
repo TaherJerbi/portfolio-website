@@ -1,10 +1,10 @@
 import { classList } from "@/utils";
 
 export enum SkillProficiency {
-  Beginner = 0,
-  Intermediate = 1,
-  Advanced = 2,
-  Expert = 3,
+  Beginner = 1,
+  Intermediate = 2,
+  Advanced = 3,
+  Expert = 4,
 }
 export type Skill = {
   title: string;

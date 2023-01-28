@@ -3,7 +3,7 @@
 import WindowCard from "@/components/window-card";
 import { useDragControls, motion } from "framer-motion";
 import { useState } from "react";
-import { GitHub, Linkedin, Mail, MessageCircle } from "react-feather";
+import { MessageCircle } from "react-feather";
 import Button from "../button";
 export default function DragWindow() {
   const controls = useDragControls();
@@ -60,7 +60,7 @@ export default function DragWindow() {
         }}
         animate={{
           width: open ? "300px" : "0px",
-          height: open ? "270px" : "0px",
+          height: open ? "350px" : "0px",
           opacity: open ? 1 : 0,
           x: open ? 0 : 100,
           y: open ? 0 : 100,
@@ -88,30 +88,34 @@ export default function DragWindow() {
         }}
       >
         <WindowCard drag title="Drag Me!" onClose={onClose} variant="dark">
-          <div className="px-10 pt-8 h-full">
-            <p className="text-xl text-center font-bold leading-8 whitespace-nowrap">
-              Let&apos;s connect!
-            </p>
-            <div className="flex justify-between mt-4">
+          <div className="flex flex-col">
+            <div className="w-full flex-grow flex flex-col justify-start items-stretch text-center font-bold">
               <a
-                href="https://github.com/TaherJerbi"
-                target="_blank"
-                rel="noreferrer"
+                href="#presentation"
+                className=" border-b-2 border-brand-blue-dark py-3 hover:bg-brand-green-light transition duration-100 ease-in-out"
               >
-                <GitHub className="stroke-[2px] w-8 h-8 cursor-pointer" />
-              </a>
-              <a href="mailto:jerbi.taherr@gmail.com">
-                <Mail className="stroke-[2px] w-8 h-8 cursor-pointer" />
+                Presentation
               </a>
               <a
-                href="https://www.linkedin.com/in/taherjerbi"
-                target="_blank"
-                rel="noreferrer"
+                href="#about"
+                className=" border-b-2 border-brand-blue-dark py-3 hover:bg-brand-green-light transition duration-100 ease-in-out"
               >
-                <Linkedin className="stroke-[2px] w-8 h-8 cursor-pointer" />
+                About
+              </a>
+              <a
+                href="#projects"
+                className=" border-b-2 border-brand-blue-dark py-3 hover:bg-brand-green-light transition duration-100 ease-in-out"
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                className="border-b-2 border-brand-blue-dark py-3 hover:bg-brand-green-light transition duration-100 ease-in-out"
+              >
+                Contact
               </a>
             </div>
-            <div className="flex justify-center">
+            <div className="w-full flex justify-center">
               <button
                 className="mt-5 text-sm font-bold text-brand-beige-light bg-brand-red border-brand-blue-dark border-4 px-4 py-2 hover:shadow-brand-sm transition-shadow duration-300 ease-in-out"
                 onClick={onClose}

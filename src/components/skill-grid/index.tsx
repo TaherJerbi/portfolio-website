@@ -15,10 +15,15 @@ function SkillGrid({
 }) {
   const [internalSkills, setSkills] = useState(skills);
   const setCurrentTop = (id: string) => {
-    const newSkillState = [...skills].sort((a, b) =>
-      a.id === id ? -1 : b.id === id ? 1 : 0
-    );
-    setSkills(newSkillState);
+    const skill = internalSkills.findIndex((skill) => skill.id === id);
+    if (skill !== -1) {
+      const newSkillState = [...internalSkills];
+
+      newSkillState[0] = internalSkills[skill];
+      newSkillState[skill] = internalSkills[0];
+
+      setSkills(newSkillState);
+    }
   };
 
   useEffect(() => {

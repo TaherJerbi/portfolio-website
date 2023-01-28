@@ -1,6 +1,5 @@
 import Button from "@/components/button";
 import ProjectImages from "@/components/project-images";
-import SkillCard from "@/components/skill-card";
 import SkillGrid from "@/components/skill-grid";
 import { PROJECTS } from "@/data";
 import { Project } from "@/utils/types";
@@ -34,11 +33,15 @@ function ProjectSection({ project }: { project: Project }) {
             )}
           </div>
         </div>
-        <p className="text-xl">{project.description}</p>
+        <p className="text-xl mb-2 leading-relaxed">{project.description}</p>
         {project.sections.map((section) => (
-          <div key={section.title}>
+          <div key={section.title} className={"text-xl leading-relaxed"}>
             <h2 className="text-xl font-bold">- {section.title}</h2>
-            <p className="text-xl">{section.description}</p>
+            {typeof section.description === "string" ? (
+              <p className="text-xl leading-relaxed">{section.description}</p>
+            ) : (
+              section.description
+            )}
           </div>
         ))}
         <div className="flex mt-5 -ml-3 space-x-3 flex-wrap">

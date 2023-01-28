@@ -1,3 +1,4 @@
+import Upwork from "@/components/icons/upwork";
 import WindowCard from "@/components/window-card";
 import { GitHub, Linkedin, Mail, Phone } from "react-feather";
 
@@ -11,7 +12,7 @@ function Contact() {
         </div>
         <div className="mt-20 space-y-10 text-2xl font-bold">
           <a className="flex items-center space-x-5">
-            <Mail />
+            <Mail className="w-7 h-7" />
             <p>jerbi.taherr@gmail.com</p>
           </a>
           <a
@@ -20,7 +21,8 @@ function Contact() {
             rel="noreferrer"
             className="flex items-center space-x-5"
           >
-            <GitHub /> <p className="underline">github.com/taherjerbi</p>
+            <GitHub className="w-7 h-7" />{" "}
+            <p className="underline">github.com/taherjerbi</p>
           </a>
           <a
             href="https://linkedin.com/in/taherjerbi"
@@ -28,10 +30,20 @@ function Contact() {
             rel="noreferrer"
             className="flex items-center space-x-5"
           >
-            <Linkedin /> <p className="underline">linkedin.com/in/taherjerbi</p>
+            <Linkedin className="w-7 h-7" />{" "}
+            <p className="underline">linkedin.com/in/taherjerbi</p>
+          </a>
+          <a
+            href="https://www.upwork.com/freelancers/~01406a12eb79ae2263"
+            target={"_blank"}
+            rel="noreferrer"
+            className="flex items-center space-x-5"
+          >
+            <Upwork className="w-7 h-7" />
+            <p className="underline">Upwork Profile</p>
           </a>
           <div className="flex items-center space-x-5">
-            <Phone /> <p>+216 53 155 029</p>
+            <Phone className="w-7 h-7" /> <p>+216 53 155 029</p>
           </div>
         </div>
       </div>
@@ -47,7 +59,7 @@ function Contact() {
                 <p>From : </p>
                 <input
                   placeholder="Email or Phone"
-                  className="ml-1 focus:outline-none text-brand-blue-dark w-full lg:w-auto lg:flex-grow"
+                  className="bg-transparent ml-1 focus:outline-none text-brand-blue-dark w-full lg:w-auto lg:flex-grow"
                 />
               </div>
             </div>
@@ -56,14 +68,14 @@ function Contact() {
                 <p>Hello, my name is :</p>
                 <input
                   placeholder="_________________"
-                  className="ml-1 focus:outline-none text-brand-blue-dark w-full lg:flex-grow lg:w-auto"
+                  className="bg-transparent ml-1 focus:outline-none text-brand-blue-dark w-full lg:flex-grow lg:w-auto"
                 />
               </div>
               <div className="flex flex-wrap items-center mt-5">
                 <p>I would like to</p>
                 <select
                   defaultValue={"client"}
-                  className="ml-1 border-brand-blue-dark border-4 px-2 py-1 lg:w-fit w-full text-sm sm:text-lg md:text-xl lg:text-2xl"
+                  className="bg-transparent ml-1 border-brand-blue-dark border-4 px-2 py-1 lg:w-fit w-full text-sm sm:text-lg md:text-xl lg:text-2xl"
                 >
                   <option value={"other"} className={"text-xl"}>
                     solicit your services
@@ -80,7 +92,7 @@ function Contact() {
                 </select>
               </div>
               <textarea
-                className="mt-5 h-[150px] w-full focus:outline-none text-brand-blue-dark leading-relaxed"
+                className="bg-transparent mt-5 h-[150px] w-full focus:outline-none text-brand-blue-dark leading-relaxed"
                 placeholder="Your message here..."
               ></textarea>
             </div>

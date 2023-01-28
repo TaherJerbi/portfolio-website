@@ -85,14 +85,59 @@ export const SKILLS: Skill[] = [
     id: "jest",
   },
   {
-    title: "Test Driven Development",
-    proficiency: SkillProficiency.Intermediate,
-    id: "tdd",
-  },
-  {
     title: "Git",
     proficiency: SkillProficiency.Expert,
     id: "git",
+  },
+  {
+    title: "🧪 Storybook",
+    proficiency: SkillProficiency.Advanced,
+    id: "storybook",
+  },
+  {
+    title: "Charka UI",
+    proficiency: SkillProficiency.Advanced,
+    id: "chakra",
+  },
+  {
+    title: "Strapi",
+    proficiency: SkillProficiency.Advanced,
+    id: "strapi",
+  },
+  {
+    title: "GraphQL Codegen",
+    proficiency: SkillProficiency.Intermediate,
+    id: "graphql-codegen",
+  },
+  {
+    title: "Angular",
+    proficiency: SkillProficiency.Beginner,
+    id: "angular",
+  },
+  {
+    title: "Java",
+    proficiency: SkillProficiency.Intermediate,
+    id: "java",
+  },
+  {
+    title: "C / C++",
+    proficiency: SkillProficiency.Intermediate,
+    id: "c",
+  },
+  {
+    title: "Python",
+    proficiency: SkillProficiency.Intermediate,
+    id: "python",
+  },
+  {
+    title: "Gatsby",
+    proficiency: SkillProficiency.Advanced,
+    id: "gatsby",
+  },
+  {
+    title: "RxJS",
+    proficiency: SkillProficiency.Beginner,
+    id: "rxjs",
   },
 ];
 
@@ -135,10 +180,73 @@ export const PROJECTS: Project[] = [
         description:
           "This was an initial trial for an Upwork client that allowed me to demonstrate my skills as a React and Node.js developer. It also allowed me to get familiar with the tech stack the client needed.",
       },
+      {
+        title: "What I learned",
+        description: (
+          <ul>
+            <li>
+              - I learned how to use{" "}
+              <span className="font-bold">Chakra UI</span>
+            </li>
+            <li>
+              - This was my first <span className="font-bold">GraphQL</span>{" "}
+              project, I learned:
+              <ul className="ml-10 list-disc">
+                <li>
+                  Create a graphql server from scratch using express and Apollo
+                  Server.
+                </li>
+                <li>
+                  Connect to a graphql server from the client using Apollo
+                  Client.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        ),
+      },
     ],
     liveUrl: "https://designcurated-frontend.vercel.app/",
     githubUrl: "https://github.com/TaherJerbi/designcurated-frontend",
     desktopImageUrl: "/assets/images/designcurated.desktop.png",
     mobileImageUrl: "/assets/images/designcurated.mobile.png",
+  },
+  {
+    id: "3",
+    title: "Sanibains",
+    description:
+      "A website for sanibains, a distribution company of sanitary products, Ceramics, Faucets, Kitchens, Bathroom Furniture, Appliances and bathroom accessories.",
+    skills: getSkillsByIds([
+      "react",
+      "typescript",
+      "nextjs",
+      "chakra",
+      "graphql",
+      "apollo",
+      "strapi",
+      "graphql-codegen",
+    ]),
+    sections: [
+      {
+        title: "Purpose of this project",
+        description:
+          "The company needed to showcase the company's products and services. It also needed to be able to manage the content of the website through a CMS. I used Strapi as a CMS and Next.js as a frontend framework.",
+      },
+      {
+        title: "What I learned",
+        description: (
+          <p>
+            I learned how to expose a GraphQL API with Strapi and use{" "}
+            <span className="font-bold">GraphQL Codegen </span>
+            to share types for queries, mutations and fragments. This allowed me
+            to use the generated types in the frontend to make sure that the
+            queries are correct and that the data is correctly typed.
+          </p>
+        ),
+      },
+    ],
+    liveUrl: "https://sanibains-next.vercel.app/",
+    desktopImageUrl: "/assets/images/sanibains.desktop.png",
+    mobileImageUrl: "/assets/images/sanibains.mobile.png",
   },
 ];

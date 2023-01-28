@@ -17,7 +17,7 @@ export type Project = {
   skills: Skill[];
   sections: {
     title: string;
-    description: string;
+    description: string | JSX.Element;
   }[];
   liveUrl?: string;
   githubUrl?: string;

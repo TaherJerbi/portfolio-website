@@ -1,6 +1,7 @@
 import Upwork from "@/components/icons/upwork";
 import WindowCard from "@/components/window-card";
 import { GitHub, Linkedin, Mail, Phone } from "react-feather";
+import ContactForm from "./form";
 
 function Contact() {
   return (
@@ -48,62 +49,7 @@ function Contact() {
         </div>
       </div>
       {/* contact form */}
-      <div id="contact" className="w-full lg:w-auto flex-grow">
-        <WindowCard title="SEND EMAIL" variant="dark">
-          <div className="py-10 px-5 ">
-            <div className="mb-5 w-full border-brand-blue-dark border-4 px-2 py-3 text-lg sm:text-lg md:text-xl lg:text-2xl font-bold">
-              To : jerbi.taherr@gmail.com
-            </div>
-            <div className="focus:border-brand-blue mb-10 w-full border-brand-blue-dark border-4 px-2 py-3 text-lg sm:text-lg md:text-xl lg:text-2xl font-bold">
-              <div className="flex flex-wrap">
-                <p>From : </p>
-                <input
-                  placeholder="Email or Phone"
-                  className="bg-transparent ml-1 focus:outline-none text-brand-blue-dark w-full lg:w-auto lg:flex-grow"
-                />
-              </div>
-            </div>
-            <div className="w-full border-brand-blue-dark border-4 p-4 text-xl sm:text-lg md:text-xl lg:text-2xl font-bold">
-              <div className="flex flex-wrap">
-                <p>Hello, my name is :</p>
-                <input
-                  placeholder="_________________"
-                  className="bg-transparent ml-1 focus:outline-none text-brand-blue-dark w-full lg:flex-grow lg:w-auto"
-                />
-              </div>
-              <div className="flex flex-wrap items-center mt-5">
-                <p>I would like to</p>
-                <select
-                  defaultValue={"client"}
-                  className="bg-transparent ml-1 border-brand-blue-dark border-4 px-2 py-1 lg:w-fit w-full text-sm sm:text-lg md:text-xl lg:text-2xl"
-                >
-                  <option value={"other"} className={"text-xl"}>
-                    solicit your services
-                  </option>
-                  <option value={"chat"} className={"text-xl"}>
-                    talk about tech
-                  </option>
-                  <option value={"meet"} className={"text-xl"}>
-                    schedule a meeting
-                  </option>
-                  <option value={"other"} className={"text-xl"}>
-                    tell you something
-                  </option>
-                </select>
-              </div>
-              <textarea
-                className="bg-transparent mt-5 h-[150px] w-full focus:outline-none text-brand-blue-dark leading-relaxed"
-                placeholder="Your message here..."
-              ></textarea>
-            </div>
-            <div className="flex justify-center mt-5 text-xl font-bold">
-              <button className="px-8 py-4 text-brand-beige-light bg-brand-blue-dark hover:shadow-brand-sm transition-shadow duration-200 ease-in-out">
-                Send
-              </button>
-            </div>
-          </div>
-        </WindowCard>
-      </div>
+      <ContactForm />
     </div>
   );
 }

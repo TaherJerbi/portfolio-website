@@ -12,7 +12,12 @@ export default function Nav() {
           contact
         </a>
       </div>
-      <a className="hover:underline font-semibold" href={"#presentation"}>
+      <a
+        className="hover:underline font-semibold"
+        href={"/assets/pdf/resume.pdf"}
+        target="_blank"
+        rel="noreferrer"
+      >
         resume
       </a>
     </nav>

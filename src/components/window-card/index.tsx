@@ -19,17 +19,15 @@ export default function WindowCard({
   return (
     <div
       className={classList(
-        "flex flex-col col-span-1 bg-brand-beige-light h-full w-full border-brand-blue-dark border-4 shadow-brand-lg rounded-xl overflow-hidden",
+        "flex flex-col col-span-1 h-full w-full border-brand-blue-dark border-4 shadow-brand-lg rounded-xl overflow-hidden",
         {
           "cursor-grab": !!drag,
+          "bg-brand-blue-dark": variant === "dark",
+          "bg-brand-beige-light": variant === "default",
         }
       )}
     >
-      <div
-        className={classList("px-2 py-1 flex justify-between items-center", {
-          "bg-brand-blue-dark": variant === "dark",
-        })}
-      >
+      <div className={classList("px-2 py-1 flex justify-between items-center")}>
         <div className="flex space-x-2">
           {!onClose ? (
             <div

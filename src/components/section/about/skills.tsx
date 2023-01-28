@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/button";
 import { SkillProficiencyCircle } from "@/components/skill-card/skill-proficiency-circle";
 import SkillGrid from "@/components/skill-grid";
 import { Tooltip } from "@/components/tooltip";
@@ -45,63 +46,63 @@ export default function Skills() {
 
   return (
     <>
-      <div className="flex space-x-2 items-center">
-        <div className="flex space-x-2 pr-4 items-center">
+      <div className="flex space-x-2 items-center justify-between">
+        <div>
           <p className="text-3xl font-bold text-brand-blue">Skills</p>
+          <p className="text-xs">try clicking on skills and circles</p>
+        </div>
+        <div className="flex space-x-2 pr-4 items-center">
           <Tooltip
-            text="Sort"
-            className="bg-brand-blue text-brand-beige-light font-bold text-sm -ml-2"
+            text={"Expert"}
+            className={"bg-brand-red font-bold text-brand-beige-light "}
           >
-            <BarChart
-              onClick={sortByProficiency}
-              className="text-brand-blue h-8 w-8 stroke-[3px] cursor-pointer p-1 rounded-full border-brand-blue border-2 hover:bg-brand-beige-light transition duration-100 ease-in-out"
+            <SkillProficiencyCircle
+              onClick={() => toggleProficiency(SkillProficiency.Expert)}
+              shadow={highlightedProficiency === SkillProficiency.Expert}
+              size={5}
+              proficiency={SkillProficiency.Expert}
+            />
+          </Tooltip>
+          <Tooltip
+            text={"Advanced"}
+            className={"bg-brand-beige-ecru font-bold text-brand-beige-light "}
+          >
+            <SkillProficiencyCircle
+              onClick={() => toggleProficiency(SkillProficiency.Advanced)}
+              shadow={highlightedProficiency === SkillProficiency.Advanced}
+              size={5}
+              proficiency={SkillProficiency.Advanced}
+            />
+          </Tooltip>
+          <Tooltip
+            text={"Intermediate"}
+            className={"bg-green-300 font-bold text-brand-beige-light "}
+          >
+            <SkillProficiencyCircle
+              onClick={() => toggleProficiency(SkillProficiency.Intermediate)}
+              shadow={highlightedProficiency === SkillProficiency.Intermediate}
+              size={5}
+              proficiency={SkillProficiency.Intermediate}
+            />
+          </Tooltip>
+          <Tooltip
+            text={"Beginner"}
+            className={"bg-brand-blue font-bold text-brand-beige-light "}
+          >
+            <SkillProficiencyCircle
+              onClick={() => toggleProficiency(SkillProficiency.Beginner)}
+              shadow={highlightedProficiency === SkillProficiency.Beginner}
+              size={5}
+              proficiency={SkillProficiency.Beginner}
             />
           </Tooltip>
         </div>
-        <Tooltip
-          text={"Expert"}
-          className={"bg-brand-red font-bold text-brand-beige-light "}
+        <button
+          onClick={sortByProficiency}
+          className={"text-sm pt-2 underline text-brand-blue font-bold"}
         >
-          <SkillProficiencyCircle
-            onClick={() => toggleProficiency(SkillProficiency.Expert)}
-            shadow={highlightedProficiency === SkillProficiency.Expert}
-            size={5}
-            proficiency={SkillProficiency.Expert}
-          />
-        </Tooltip>
-        <Tooltip
-          text={"Advanced"}
-          className={"bg-brand-beige-ecru font-bold text-brand-beige-light "}
-        >
-          <SkillProficiencyCircle
-            onClick={() => toggleProficiency(SkillProficiency.Advanced)}
-            shadow={highlightedProficiency === SkillProficiency.Advanced}
-            size={5}
-            proficiency={SkillProficiency.Advanced}
-          />
-        </Tooltip>
-        <Tooltip
-          text={"Intermediate"}
-          className={"bg-green-300 font-bold text-brand-beige-light "}
-        >
-          <SkillProficiencyCircle
-            onClick={() => toggleProficiency(SkillProficiency.Intermediate)}
-            shadow={highlightedProficiency === SkillProficiency.Intermediate}
-            size={5}
-            proficiency={SkillProficiency.Intermediate}
-          />
-        </Tooltip>
-        <Tooltip
-          text={"Beginner"}
-          className={"bg-brand-blue font-bold text-brand-beige-light "}
-        >
-          <SkillProficiencyCircle
-            onClick={() => toggleProficiency(SkillProficiency.Beginner)}
-            shadow={highlightedProficiency === SkillProficiency.Beginner}
-            size={5}
-            proficiency={SkillProficiency.Beginner}
-          />
-        </Tooltip>
+          sort by proficiency
+        </button>
       </div>
 
       <div className="mt-12">

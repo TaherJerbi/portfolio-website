@@ -14,27 +14,34 @@ export default function About() {
                 <div className="space-y-5">
                   <p className="text-2xl font-bold">Who I Am</p>
                   <p className="text-lg leading-8">
-                    I am a Junior Developer based in Tunisia. I have two years
-                    of experience as a freelance web developer. I am also a
-                    Software Engineering student at the National Institute of
-                    Applied Science and Technology (INSAT) in Tunis. +
-                    graduation date
+                    As a Junior Developer based in{" "}
+                    <span className="font-bold text-brand-red">Tunisia</span>, I
+                    bring two years of experience in freelance web development
+                    to the table. In addition, I am currently pursuing a degree
+                    in <span className="font-bold">Software Engineering</span>{" "}
+                    at the National Institute of Applied Science and Technology
+                    (INSAT) in Tunis, with an expected graduation date of
+                    February 2024.
                   </p>
                 </div>
                 <div className="space-y-5 mt-5">
                   <p className="text-2xl font-bold">What I Do</p>
                   <p className="text-lg leading-8">
                     I write code. A lot… My main focus right now is building web
-                    applications with React and Typescript. Lorem ipsum dolor
-                    sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
+                    applications with React and Typescript. I am always looking
+                    to learn new things, and I am currently diving into Rust. To
+                    me, every project is an opportunity to learn and grow as a
+                    developer.
                   </p>
                 </div>
               </div>
-              <div className="mt-5">
-                <button className="border-brand-blue-dark border-4 text-xl p-2 hover:shadow-brand-sm transition-shadow 0.2s ease-in-out">
+              <div className="mt-8">
+                <a
+                  href="#projects"
+                  className="border-brand-blue-dark border-4 text-xl p-2 hover:shadow-brand-sm transition-shadow 0.2s ease-in-out font-bold"
+                >
                   see projects
-                </button>
+                </a>
               </div>
             </div>
           </div>

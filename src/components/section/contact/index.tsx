@@ -85,7 +85,7 @@ function Contact() {
               ></textarea>
             </div>
             <div className="flex justify-center mt-5 text-xl font-bold">
-              <button className="px-8 py-4 bg-brand-beige-light border-brand-blue-dark border-4 hover:shadow-brand-sm transition-shadow duration-200 ease-in-out">
+              <button className="px-8 py-4 text-brand-beige-light bg-brand-blue-dark hover:shadow-brand-sm transition-shadow duration-200 ease-in-out">
                 Send
               </button>
             </div>

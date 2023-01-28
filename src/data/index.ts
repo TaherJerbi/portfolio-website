@@ -49,27 +49,72 @@ export const SKILLS: Skill[] = [
     proficiency: SkillProficiency.Beginner,
     id: "rust",
   },
+  {
+    title: "Apollo GraphQL",
+    proficiency: SkillProficiency.Advanced,
+    id: "apollo",
+  },
+  {
+    title: "Framer Motion",
+    proficiency: SkillProficiency.Intermediate,
+    id: "framer-motion",
+  },
+  {
+    title: "Tailwind CSS",
+    proficiency: SkillProficiency.Intermediate,
+    id: "tailwindcss",
+  },
+  {
+    title: "CSS",
+    proficiency: SkillProficiency.Advanced,
+    id: "css",
+  },
+  {
+    title: "HTML",
+    proficiency: SkillProficiency.Expert,
+    id: "html",
+  },
+  {
+    title: "🧪 Cypress",
+    proficiency: SkillProficiency.Intermediate,
+    id: "cypress",
+  },
+  {
+    title: "🧪 Jest",
+    proficiency: SkillProficiency.Intermediate,
+    id: "jest",
+  },
+  {
+    title: "Test Driven Development",
+    proficiency: SkillProficiency.Intermediate,
+    id: "tdd",
+  },
+  {
+    title: "Git",
+    proficiency: SkillProficiency.Expert,
+    id: "git",
+  },
 ];
 
 export const PROJECTS: Project[] = [
-  {
-    id: "1",
-    title: "Portfolio",
-    description: "This portfolio website",
-    skills: getSkillsByIds(["react", "typescript", "nextjs", "framer-motion"]),
-    sections: [
-      {
-        title: "Purpose of this project",
-        description: "To showcase my skills and projects",
-      },
-      {
-        title: "What I learned",
-        description:
-          "I learned Framer Motion and tried Next.js 13 and the experiemental appDir for the first time",
-      },
-    ],
-    githubUrl: "https://github.com/TaherJerbi/portfolio-website",
-  },
+  // {
+  //   id: "1",
+  //   title: "Portfolio",
+  //   description: "This portfolio website",
+  //   skills: getSkillsByIds(["react", "typescript", "nextjs", "framer-motion"]),
+  //   sections: [
+  //     {
+  //       title: "Purpose of this project",
+  //       description: "To showcase my skills and projects",
+  //     },
+  //     {
+  //       title: "What I learned",
+  //       description:
+  //         "I learned Framer Motion and tried Next.js 13 and the experiemental appDir for the first time",
+  //     },
+  //   ],
+  //   githubUrl: "https://github.com/TaherJerbi/portfolio-website",
+  // },
   {
     id: "2",
     title: "Design Curated",

@@ -29,9 +29,9 @@ export default function About() {
                   <p className="text-lg leading-8">
                     I write code. A lot… My main focus right now is building web
                     applications with React and Typescript. I am always looking
-                    to learn new things, and I am currently diving into Rust. To
-                    me, every project is an opportunity to learn and grow as a
-                    developer.
+                    to learn new things, and I am currently diving into Rust. I
+                    approach each project as a chance to expand my skills and
+                    knowledge as a developer.
                   </p>
                 </div>
               </div>

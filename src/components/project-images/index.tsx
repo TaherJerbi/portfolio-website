@@ -16,7 +16,7 @@ export default function ProjectImages({ project }: { project: Project }) {
     project.desktopImageUrl ? ActiveImage.DESKTOP : ActiveImage.MOBILE
   );
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col justify-start h-full">
       <div className="flex justify-center items-center h-[400px]">
         {project.mobileImageUrl && (
           <motion.div

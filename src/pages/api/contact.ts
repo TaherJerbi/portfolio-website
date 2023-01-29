@@ -6,7 +6,7 @@ import axios from "axios";
 export type Body = {
   name: string;
 
-  email: string;
+  from: string;
 
   purpose: string;
 
@@ -23,15 +23,14 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const body = req.body as Body;
-  console.log("🚀 ~ file: contact.ts:26 ~ body", body);
-  const { name, email, purpose, message } = body;
+  const { name, from, purpose, message } = body;
   const data = {
     from: `${name} <mailgun@${DOMAIN_NAME}>`,
     to: `${RECEIVER}`,
     subject: `Contact from ${name} - ${purpose}`,
     text: `
             Name: ${name}
-            Email: ${email}
+            From: ${from}
             Purpose: ${purpose}
             Message:
             ${message}

@@ -121,7 +121,7 @@ function ContactForm() {
                 <p>From : </p>
                 <input
                   {...register("from")}
-                  placeholder="Email of Phone"
+                  placeholder="Email or Phone"
                   className="bg-transparent ml-1 focus:outline-none text-brand-blue-dark w-full lg:w-auto lg:flex-grow"
                 />
               </div>

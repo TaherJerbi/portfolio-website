@@ -88,41 +88,39 @@ export default function DragWindow() {
         }}
       >
         <WindowCard drag title="Drag Me!" onClose={onClose} variant="dark">
-          <div className="flex flex-col">
-            <div className="w-full flex-grow flex flex-col justify-start items-stretch text-center font-bold">
-              <a
-                href="#presentation"
-                className=" border-b-2 border-brand-blue-dark py-3 hover:bg-brand-green-light transition duration-100 ease-in-out"
-              >
-                Presentation
-              </a>
-              <a
-                href="#about"
-                className=" border-b-2 border-brand-blue-dark py-3 hover:bg-brand-green-light transition duration-100 ease-in-out"
-              >
-                About
-              </a>
-              <a
-                href="#projects"
-                className=" border-b-2 border-brand-blue-dark py-3 hover:bg-brand-green-light transition duration-100 ease-in-out"
-              >
-                Projects
-              </a>
-              <a
-                href="#contact"
-                className="border-b-2 border-brand-blue-dark py-3 hover:bg-brand-green-light transition duration-100 ease-in-out"
-              >
-                Contact
-              </a>
-            </div>
-            <div className="w-full flex justify-center">
-              <button
-                className="mt-5 text-sm font-bold text-brand-beige-light bg-brand-red border-brand-blue-dark border-4 px-4 py-2 hover:shadow-brand-sm transition-shadow duration-300 ease-in-out"
-                onClick={onClose}
-              >
-                Close
-              </button>
-            </div>
+          <div className="w-full h-[70%] flex-grow flex flex-col justify-start items-stretch text-center font-bold">
+            <a
+              href="#presentation"
+              className=" border-b-2 flex items-center justify-center border-brand-blue-dark h-[25%] hover:bg-brand-green-light transition duration-100 ease-in-out"
+            >
+              Presentation
+            </a>
+            <a
+              href="#about"
+              className=" border-b-2 flex items-center justify-center border-brand-blue-dark h-[25%] hover:bg-brand-green-light transition duration-100 ease-in-out"
+            >
+              About
+            </a>
+            <a
+              href="#projects"
+              className=" border-b-2 flex items-center justify-center border-brand-blue-dark h-[25%] hover:bg-brand-green-light transition duration-100 ease-in-out"
+            >
+              Projects
+            </a>
+            <a
+              href="#contact"
+              className="border-b-2 flex items-center justify-center border-brand-blue-dark h-[25%] hover:bg-brand-green-light transition duration-100 ease-in-out"
+            >
+              Contact
+            </a>
+          </div>
+          <div className="w-full py-3 h-[30%] flex justify-center items-center">
+            <button
+              className="text-sm font-bold text-brand-beige-light bg-brand-red border-brand-blue-dark border-4 px-4 py-2 hover:shadow-brand-sm transition-shadow duration-300 ease-in-out"
+              onClick={onClose}
+            >
+              Close
+            </button>
           </div>
         </WindowCard>
       </motion.div>

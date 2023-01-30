@@ -1,6 +1,6 @@
 import Button from "@/components/button";
 import ClientOnly from "@/components/client-only";
-import DragWindow from "@/components/drag-window";
+import DragWindow from "@/components/draggable-nav";
 import TriangeDown from "@/components/icons/triange-down";
 import Nav from "@/components/nav";
 import Image from "next/image";

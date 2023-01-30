@@ -1,5 +1,5 @@
 import ClientOnly from "@/components/client-only";
-import DragWindow from "@/components/drag-window";
+import DraggableNav from "@/components/draggable-nav";
 import About from "@/components/section/about";
 import Contact from "@/components/section/contact";
 import PresentationSection from "@/components/section/presentation";
@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <ClientOnly>
-        <DragWindow />
+        <DraggableNav />
       </ClientOnly>
       <PresentationSection />
       <About />

@@ -1,13 +1,11 @@
 "use client";
 
 import WindowCard from "@/components/window-card";
-import { useDragControls, motion } from "framer-motion";
+
 import { useState } from "react";
 import { MessageCircle } from "react-feather";
-import Button from "../button";
-export default function DragWindow() {
-  const controls = useDragControls();
-  const iconControls = useDragControls();
+import FloatingDragContainer from "@/components/floating-drag-container";
+export default function DraggableNav() {
   const [open, setOpen] = useState(true);
   const onOpen = () => {
     setOpen(true);
@@ -18,67 +16,32 @@ export default function DragWindow() {
 
   return (
     <div className="fixed z-50 bottom-0 right-0">
-      <motion.div
+      <FloatingDragContainer
         onClick={onOpen}
-        className="absolute z-10 bottom-20 right-5 md:right-20 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red shadow-brand-sm hover:shadow-brand-md transition-shadow duration-300 ease-in-out"
-        initial={{
-          width: "0",
-          height: "0",
-          opacity: 0,
-        }}
-        animate={{
-          width: open ? "0px" : "50px",
-          height: open ? "0px" : "50px",
-          opacity: open ? 0 : 1,
-          x: open ? 100 : undefined,
-        }}
-        transition={{
-          duration: 0.5,
-          ease: "easeInOut",
-        }}
-        dragControls={iconControls}
-        onPointerDown={(e) => {
-          iconControls.start(e);
-        }}
-        drag
+        className="z-10 bottom-20 right-5 md:right-20 overflow-hidden border-2 p-2 flex justify-center items-center border-brand-blue-dark rounded-full cursor-pointer bg-brand-red shadow-brand-sm hover:shadow-brand-md transition-shadow duration-300 ease-in-out"
         dragConstraints={{
           left: 0,
           right: 0,
           top: -(window?.visualViewport?.height ?? 0) / 2,
           bottom: 0,
         }}
+        open={!open}
+        width={"50px"}
+        height={"50px"}
       >
         <MessageCircle className="stroke-[2px] w-full h-full fill-brand-beige-light" />
-      </motion.div>
-      <motion.div
+      </FloatingDragContainer>
+      <FloatingDragContainer
         initial={{
           width: "0px",
           height: "0px",
           opacity: 0,
-          x: 100,
-          y: 100,
         }}
-        animate={{
-          width: open ? "300px" : "0px",
-          height: open ? "350px" : "0px",
-          opacity: open ? 1 : 0,
-          x: open ? 0 : 100,
-          y: open ? 0 : 100,
-        }}
-        transition={{
-          duration: 0.5,
-          ease: "easeInOut",
-        }}
-        className="absolute bottom-20 right-10 z-20 p-3 overflow-hidden"
-        dragControls={controls}
-        onPointerDown={(e) => {
-          controls.start(e);
-        }}
-        drag
+        className="bottom-20 right-10 z-20 p-3 overflow-hidden"
         dragConstraints={{
-          left: open ? (-3 * (window?.visualViewport?.width ?? 0)) / 4 : 0,
+          left: (-3 * (window?.visualViewport?.width ?? 0)) / 4,
           right: 0,
-          top: open ? -(window?.visualViewport?.height ?? 0) / 2 : 0,
+          top: -(window?.visualViewport?.height ?? 0) / 2,
           bottom: 0,
         }}
         dragTransition={{
@@ -86,6 +49,9 @@ export default function DragWindow() {
           power: 0.1,
           bounceStiffness: 800,
         }}
+        open={open}
+        width={"300px"}
+        height={"350px"}
       >
         <WindowCard drag title="Drag Me!" onClose={onClose} variant="dark">
           <div className="w-full h-[70%] flex-grow flex flex-col justify-start items-stretch text-center font-bold">
@@ -123,7 +89,7 @@ export default function DragWindow() {
             </button>
           </div>
         </WindowCard>
-      </motion.div>
+      </FloatingDragContainer>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import WindowCard from "@/components/window-card";
 import { classList } from "@/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,23 +10,30 @@ import axios from "axios";
 
 import { ToastContainer, toast, ToastPosition } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Button from "@/components/button";
 
 function SendButton({
   disabled,
-  onClick,
+  loading,
 }: {
   disabled?: boolean;
   onClick?: () => void;
+  loading?: boolean;
 }) {
   return (
-    <button
+    <Button
       type="submit"
       disabled={disabled}
-      onClick={onClick}
-      className="px-8 py-4 text-brand-beige-light bg-brand-blue-dark hover:shadow-brand-sm transition-shadow duration-200 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+      bg="blue-dark"
+      px={"px-8"}
+      flat
+      hoverShadow
+      shadow="sm"
+      className="disabled:opacity-50 disabled:cursor-not-allowed relative"
+      loading={loading}
     >
       Send
-    </button>
+    </Button>
   );
 }
 
@@ -59,8 +66,8 @@ export function successToast({
     pauseOnHover: true,
     draggable: true,
     className:
-      "bg-brand-beige-light font-bold text-xl shadow-brand-md text-brand-marron-dark",
-    progressClassName: "bg-green-300",
+      "!bg-brand-beige-light !font-bold !text-xl !shadow-brand-md !text-brand-marron-dark",
+    progressClassName: "!bg-green-300",
     icon: "👍",
   });
 }
@@ -80,8 +87,8 @@ export function errorToast({
     pauseOnHover: true,
     draggable: true,
     className:
-      "font-bold text-xl text-brand-beige-light shadow-brand-md bg-brand-red",
-    progressClassName: "bg-red-100",
+      "!font-bold !text-xl !text-brand-beige-light !shadow-brand-md !bg-brand-red",
+    progressClassName: "!bg-red-100",
     icon: "😭",
   });
 }
@@ -163,7 +170,10 @@ function ContactForm() {
               ></textarea>
             </div>
             <div className="flex justify-center mt-5 text-xl font-bold">
-              <SendButton disabled={!formState.isValid} />
+              <SendButton
+                loading={formState.isSubmitting}
+                disabled={!formState.isValid || formState.isSubmitting}
+              />
             </div>
           </div>
         </WindowCard>

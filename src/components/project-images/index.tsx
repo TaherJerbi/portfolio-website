@@ -5,12 +5,14 @@ import { Project } from "@/utils/types";
 import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Button from "../button";
 
 enum ActiveImage {
   MOBILE = "mobile",
   DESKTOP = "desktop",
   BOTH = "both",
 }
+
 export default function ProjectImages({ project }: { project: Project }) {
   const [activeImage, setActiveImage] = useState(
     project.desktopImageUrl ? ActiveImage.DESKTOP : ActiveImage.MOBILE
@@ -66,36 +68,42 @@ export default function ProjectImages({ project }: { project: Project }) {
       </div>
       {project.desktopImageUrl && project.mobileImageUrl && (
         <div className="flex justify-center items-stretch mt-10">
-          <button
-            onClick={() => {
-              setActiveImage(ActiveImage.MOBILE);
-            }}
-            className={classList(
-              "text-sm font-bold py-4 px-4 h-fit border-brand-blue-dark border-2 transition duration-500 ease-in-out",
-              {
-                "bg-brand-blue-dark text-white":
-                  activeImage === ActiveImage.MOBILE,
-              }
-            )}
-          >
-            Mobile
-          </button>
-          <button
-            onClick={() => {
-              setActiveImage(ActiveImage.DESKTOP);
-            }}
-            className={classList(
-              "text-sm font-bold py-4 px-4 h-fit border-brand-blue-dark border-2 transition duration-500 ease-in-out",
-              {
-                "bg-brand-blue-dark text-white":
-                  activeImage === ActiveImage.DESKTOP,
-              }
-            )}
-          >
-            Desktop
-          </button>
+          <ChooseImageButton
+            onClick={() => setActiveImage(ActiveImage.MOBILE)}
+            active={activeImage === ActiveImage.MOBILE}
+            text="Mobile"
+          />
+          <ChooseImageButton
+            onClick={() => setActiveImage(ActiveImage.DESKTOP)}
+            active={activeImage === ActiveImage.DESKTOP}
+            text="Desktop"
+          />
         </div>
       )}
     </div>
+  );
+}
+function ChooseImageButton({
+  onClick,
+  active,
+  text,
+}: {
+  onClick: () => void;
+  active: boolean;
+  text: string;
+}) {
+  return (
+    <Button
+      onClick={onClick}
+      bg="beige"
+      border
+      fontSize="text-sm"
+      flat
+      className={classList({
+        "!bg-brand-blue-dark !text-white": active,
+      })}
+    >
+      {text}
+    </Button>
   );
 }

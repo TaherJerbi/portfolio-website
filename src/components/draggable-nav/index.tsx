@@ -5,6 +5,7 @@ import WindowCard from "@/components/window-card";
 import { useState } from "react";
 import { MessageCircle } from "react-feather";
 import FloatingDragContainer from "@/components/floating-drag-container";
+import Button from "../button";
 export default function DraggableNav() {
   const [open, setOpen] = useState(true);
   const onOpen = () => {
@@ -81,12 +82,20 @@ export default function DraggableNav() {
             </a>
           </div>
           <div className="w-full py-3 h-[30%] flex justify-center items-center">
-            <button
-              className="text-sm font-bold text-brand-beige-light bg-brand-red border-brand-blue-dark border-4 px-4 py-2 hover:shadow-brand-sm transition-shadow duration-300 ease-in-out"
+            <Button
+              bg="red"
+              shadow="xs"
+              py="py-2"
+              px="px-4"
+              flat
+              hoverShadow
+              fontSize="text-md"
+              border
+              borderWidth="4"
               onClick={onClose}
             >
               Close
-            </button>
+            </Button>
           </div>
         </WindowCard>
       </FloatingDragContainer>

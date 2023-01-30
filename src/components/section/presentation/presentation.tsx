@@ -20,7 +20,7 @@ export default function Presentation() {
         </p>
         <div className="flex justify-center md:justify-start pt-10">
           <a href="#projects">
-            <Button variant="blue" fontSize="text-2xl">
+            <Button bg="blue" shadow="md" hoverShadow>
               see my work
             </Button>
           </a>

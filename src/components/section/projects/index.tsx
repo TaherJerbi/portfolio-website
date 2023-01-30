@@ -14,8 +14,10 @@ function ProjectSection({ project }: { project: Project }) {
             {project.liveUrl && (
               <a href={project.liveUrl} target="_blank" rel="noreferrer">
                 <Button
-                  variant={"beige"}
-                  className="text-sm font-bold py-4 px-4 h-fit"
+                  bg={"beige-ecru"}
+                  fontSize={"text-sm"}
+                  shadow="md"
+                  hoverShadow
                 >
                   Live Demo
                 </Button>
@@ -24,8 +26,10 @@ function ProjectSection({ project }: { project: Project }) {
             {project.githubUrl && (
               <a href={project.githubUrl} target="_blank" rel="noreferrer">
                 <Button
-                  variant={"blue"}
-                  className="text-sm font-bold py-4 px-4 h-fit"
+                  bg={"blue"}
+                  fontSize={"text-sm"}
+                  shadow="md"
+                  hoverShadow
                 >
                   Github
                 </Button>

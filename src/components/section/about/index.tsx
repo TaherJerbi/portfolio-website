@@ -1,3 +1,4 @@
+import Button from "@/components/button";
 import WindowCard from "@/components/window-card";
 import Skills from "./skills";
 export default function About() {
@@ -38,9 +39,19 @@ export default function About() {
               <div className="mt-8">
                 <a
                   href="#projects"
-                  className="border-brand-blue-dark border-4 text-xl p-2 hover:shadow-brand-sm transition-shadow 0.2s ease-in-out font-bold"
+                  // className="border-brand-blue-dark border-4 text-xl p-2 hover:shadow-brand-sm transition-shadow 0.2s ease-in-out font-bold"
                 >
-                  see projects
+                  <Button
+                    bg="beige"
+                    border
+                    flat
+                    hoverShadow
+                    shadow="xs"
+                    borderWidth="4"
+                    fontSize="text-xl"
+                  >
+                    see projects
+                  </Button>
                 </a>
               </div>
             </div>

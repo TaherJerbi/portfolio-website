@@ -139,6 +139,11 @@ export const SKILLS: Skill[] = [
     proficiency: SkillProficiency.Beginner,
     id: "rxjs",
   },
+  {
+    title: "Prisma",
+    proficiency: SkillProficiency.Intermediate,
+    id: "prisma",
+  },
 ];
 
 export const PROJECTS: Project[] = [
@@ -163,6 +168,7 @@ export const PROJECTS: Project[] = [
   {
     id: "2",
     title: "Design Curated",
+    date: "2022",
     description:
       "Next.js app with a GraphQL backend that allows you to search images from the Unsplash API.",
     skills: getSkillsByIds([
@@ -214,6 +220,7 @@ export const PROJECTS: Project[] = [
   {
     id: "3",
     title: "Sanibains",
+    date: "2023",
     description:
       "A website for sanibains, a distribution company of sanitary products, Ceramics, Faucets, Kitchens, Bathroom Furniture, Appliances and bathroom accessories.",
     skills: getSkillsByIds([
@@ -248,5 +255,40 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://sanibains-next.vercel.app/",
     desktopImageUrl: "/assets/images/sanibains.desktop.png",
     mobileImageUrl: "/assets/images/sanibains.mobile.png",
+  },
+  {
+    id: "4",
+    title: "Watcherly",
+    date: "2022",
+    description:
+      "A social media app built with Gatsby and Node.js GraphQL server for an Upwork client.",
+    skills: getSkillsByIds([
+      "react",
+      "typescript",
+      "gatsby",
+      "graphql",
+      "nodejs",
+      "apollo",
+      "jest",
+      "chakra",
+      "cypress",
+      "storybook",
+      "graphql-codegen",
+      "postgresql",
+      "prisma",
+    ]),
+    sections: [
+      {
+        title: "Purpose of this project",
+        description:
+          "The client needed a platform to provide an engaging and interactive experience for users. The goal was to create a reliable and functional app with performance optimization, mobile-responsiveness and visually appealing designs.",
+      },
+      {
+        title: "What I learned",
+        description:
+          "I gained experience in writing GraphQL resolvers with the Prisma ORM, converting designs to pixel-perfect components, test-driven development, working with a postgresql database, converting front-end code to Typescript, and setting up graphql-codegen for automatic type generation. These skills improved my understanding of scalable and safe coding practices.",
+      },
+    ],
+    liveUrl: "https://watcherly.club",
   },
 ];

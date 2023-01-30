@@ -2,6 +2,7 @@ import Button from "@/components/button";
 import ProjectImages from "@/components/project-images";
 import SkillGrid from "@/components/skill-grid";
 import { PROJECTS } from "@/data";
+import { classList } from "@/utils";
 import { Project } from "@/utils/types";
 import Link from "next/link";
 
@@ -17,7 +18,12 @@ export function ProjectSection({
       id={`project${project.id}`}
       className={"grid grid-cols-4 gap-10 mb-20 md:mb-40 place-items-stretch"}
     >
-      <div className="md:col-span-2 col-span-4">
+      <div
+        className={classList({
+          "md:col-span-2 col-span-4": variant === "summary",
+          "col-span-4": variant === "full",
+        })}
+      >
         <div className="flex space-x-5 items-center mb-8 flex-wrap space-y-2">
           <div>
             <Link href={`/projects/${project.id}`}>
@@ -78,7 +84,12 @@ export function ProjectSection({
         </div>
       </div>
       {(project.desktopImageUrl || project.mobileImageUrl) && (
-        <div className="md:col-span-2 col-span-4">
+        <div
+          className={classList({
+            "md:col-span-2 col-span-4": variant === "summary",
+            "col-span-4": variant === "full",
+          })}
+        >
           <ProjectImages project={project} />
         </div>
       )}

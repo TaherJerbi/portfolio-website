@@ -1,150 +1,22 @@
 import { Project, Skill, SkillProficiency } from "@/utils/types";
+import SKILLS from "./skills";
 
-function getSkillsByIds(ids: string[]) {
-  return SKILLS.filter((skill) => ids.includes(skill.id));
+function getSkillsByIds(ids: string[], create?: boolean): Skill[] {
+  if (!create) return SKILLS.filter((skill) => ids.includes(skill.id));
+  else {
+    return ids.map((id) => {
+      const skill = SKILLS.find((skill) => skill.id === id);
+      if (!skill) {
+        return {
+          id,
+          title: id,
+          proficiency: SkillProficiency.Beginner,
+        };
+      }
+      return skill;
+    });
+  }
 }
-export const SKILLS: Skill[] = [
-  {
-    title: "React",
-    proficiency: SkillProficiency.Advanced,
-    id: "react",
-  },
-  {
-    title: "Typescript",
-    proficiency: SkillProficiency.Advanced,
-    id: "typescript",
-  },
-  {
-    title: "Javascript",
-    proficiency: SkillProficiency.Expert,
-    id: "javascript",
-  },
-  {
-    title: "Next.js",
-    proficiency: SkillProficiency.Advanced,
-    id: "nextjs",
-  },
-  {
-    title: "Node.js",
-    proficiency: SkillProficiency.Advanced,
-    id: "nodejs",
-  },
-  {
-    title: "Express.js",
-    proficiency: SkillProficiency.Intermediate,
-    id: "expressjs",
-  },
-  {
-    title: "PostgreSQL",
-    proficiency: SkillProficiency.Intermediate,
-    id: "postgresql",
-  },
-  {
-    title: "GraphQL",
-    proficiency: SkillProficiency.Advanced,
-    id: "graphql",
-  },
-  {
-    title: "Rust",
-    proficiency: SkillProficiency.Beginner,
-    id: "rust",
-  },
-  {
-    title: "Apollo GraphQL",
-    proficiency: SkillProficiency.Advanced,
-    id: "apollo",
-  },
-  {
-    title: "Framer Motion",
-    proficiency: SkillProficiency.Intermediate,
-    id: "framer-motion",
-  },
-  {
-    title: "Tailwind CSS",
-    proficiency: SkillProficiency.Intermediate,
-    id: "tailwindcss",
-  },
-  {
-    title: "CSS",
-    proficiency: SkillProficiency.Advanced,
-    id: "css",
-  },
-  {
-    title: "HTML",
-    proficiency: SkillProficiency.Expert,
-    id: "html",
-  },
-  {
-    title: "🧪 Cypress",
-    proficiency: SkillProficiency.Intermediate,
-    id: "cypress",
-  },
-  {
-    title: "🧪 Jest",
-    proficiency: SkillProficiency.Intermediate,
-    id: "jest",
-  },
-  {
-    title: "Git",
-    proficiency: SkillProficiency.Expert,
-    id: "git",
-  },
-  {
-    title: "🧪 Storybook",
-    proficiency: SkillProficiency.Advanced,
-    id: "storybook",
-  },
-  {
-    title: "Charka UI",
-    proficiency: SkillProficiency.Advanced,
-    id: "chakra",
-  },
-  {
-    title: "Strapi",
-    proficiency: SkillProficiency.Advanced,
-    id: "strapi",
-  },
-  {
-    title: "GraphQL Codegen",
-    proficiency: SkillProficiency.Intermediate,
-    id: "graphql-codegen",
-  },
-  {
-    title: "Angular",
-    proficiency: SkillProficiency.Beginner,
-    id: "angular",
-  },
-  {
-    title: "Java",
-    proficiency: SkillProficiency.Intermediate,
-    id: "java",
-  },
-  {
-    title: "C / C++",
-    proficiency: SkillProficiency.Intermediate,
-    id: "c",
-  },
-  {
-    title: "Python",
-    proficiency: SkillProficiency.Intermediate,
-    id: "python",
-  },
-  {
-    title: "Gatsby",
-    proficiency: SkillProficiency.Advanced,
-    id: "gatsby",
-  },
-  {
-    title: "RxJS",
-    proficiency: SkillProficiency.Beginner,
-    id: "rxjs",
-  },
-  {
-    title: "Prisma",
-    proficiency: SkillProficiency.Intermediate,
-    id: "prisma",
-  },
-];
 
 export const PROJECTS: Project[] = [
   // {
@@ -290,5 +162,138 @@ export const PROJECTS: Project[] = [
       },
     ],
     liveUrl: "https://watcherly.club",
+    desktopImageUrl: "/assets/images/watcherly.desktop.png",
+    mobileImageUrl: "/assets/images/watcherly.mobile.png",
+  },
+  {
+    id: "5",
+    title: "Kallos",
+    date: "2023",
+    description:
+      "School project for our Web Frameworks class at INSAT. Kallos is An online Greek gifts store made with Angular.js, TypeScript, and Nest.js.",
+    skills: getSkillsByIds(
+      [
+        "angular",
+        "typescript",
+        "nestjs",
+        "typeorm",
+        "postgresql",
+        "rxjs",
+        "tailwindcss",
+      ],
+      true
+    ),
+    sections: [
+      {
+        title: "Presentation Video",
+        description: (
+          <div className="flex justify-center w-full">
+            <iframe
+              className="shadow-brand-sm my-5"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/w26ujmQtsP0"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+        ),
+      },
+      {
+        title: "Purpose of this project",
+        description:
+          "The goal was to demonstrate our understanding and application of web development concepts using Angular.js, TypeScript, and Nest.js in a team project. We were also required to use a database and a REST API. We chose to use PostgreSQL and TypeORM for the database and Nest.js for the REST API.",
+      },
+      {
+        title: "What I learned",
+        description:
+          "This was my first complete #angular project, and through it, I learned a lot about Angular, reactive programming with #rxjs, and gained practical experience with #nestjs in the backend.",
+      },
+      {
+        title: "Team",
+        description: (
+          <div>
+            <p>
+              I am especially proud of our team of five people for successfully
+              coordinating our efforts and completing the project in just a few
+              days. We utilized #github effectively to track progress and merge
+              code changes. This allowed us to keep everyone on the same page
+              and stay organized throughout the development process.
+            </p>
+            <p className="mt-5">
+              Here are the links to the other team members&apos; GitHub
+              profiles:
+            </p>
+            <ul className="list-disc ml-5 mb-5">
+              <li>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-brand-blue font-bold hover:underline"
+                  href="https://github.com/ismailcharfi"
+                >
+                  Ismail Charfi
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-brand-blue font-bold hover:underline"
+                  href="https://github.com/taherjerbi"
+                >
+                  Taher Jerbi
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-brand-blue font-bold hover:underline"
+                  href="https://github.com/nadineboukadida"
+                >
+                  Nadine Boukadida
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-brand-blue font-bold hover:underline"
+                  href="https://github.com/nawresncib12"
+                >
+                  Nawres Ncib
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-brand-blue font-bold hover:underline"
+                  href="https://github.com/salemhamdani"
+                >
+                  Salem Hamdani
+                </a>
+              </li>
+            </ul>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://github.com/nawresncib12/Kallos/contributors"
+            >
+              <img
+                width={310}
+                height={60}
+                alt="contributors"
+                src="https://contrib.rocks/image?repo=nawresncib12/kallos"
+              />
+            </a>
+          </div>
+        ),
+      },
+    ],
+    desktopImageUrl: "/assets/images/kallos.desktop.png",
+    githubUrl: "https://github.com/nawresncib12/kallos",
   },
 ];

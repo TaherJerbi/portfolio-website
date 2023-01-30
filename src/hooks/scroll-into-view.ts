@@ -11,7 +11,9 @@ export default function useScrollIntoView() {
 
     if (!element) return;
 
-    element.scrollIntoView();
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
   }, [pathname]);
 }
 

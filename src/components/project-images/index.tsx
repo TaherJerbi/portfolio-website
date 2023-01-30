@@ -32,12 +32,12 @@ export default function ProjectImages({ project }: { project: Project }) {
               stiffness: 150,
               damping: 30,
             }}
+            className="mb-5 relative"
           >
             <Image
-              className="rounded-2xl shadow-brand-lg border-brand-blue-dark border-4 mb-5"
+              className="rounded-2xl shadow-brand-lg border-brand-blue-dark border-4"
+              fill
               src={project.mobileImageUrl}
-              width={180}
-              height={390}
               alt={project.title + " desktop image"}
             />
           </motion.div>
@@ -54,13 +54,12 @@ export default function ProjectImages({ project }: { project: Project }) {
               stiffness: 150,
               damping: 30,
             }}
-            className="mb-5"
+            className="mb-5 relative"
           >
             <Image
-              className=" rounded-3xl shadow-brand-lg border-brand-blue-dark border-4"
+              className="rounded-2xl shadow-brand-lg border-brand-blue-dark border-4 object-top !h-fit"
               src={project.desktopImageUrl}
-              width={500}
-              height={320}
+              fill
               alt={project.title + " desktop image"}
             />
           </motion.div>

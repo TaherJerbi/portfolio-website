@@ -1,4 +1,5 @@
 import Button from "@/components/button";
+import { ElementLink } from "@/components/element-link";
 import Image from "next/image";
 export default function Presentation() {
   return (
@@ -19,11 +20,11 @@ export default function Presentation() {
           from Tunis, Tunisia 🇹🇳.
         </p>
         <div className="flex justify-center md:justify-start pt-10">
-          <a href="#projects">
+          <ElementLink id="projects">
             <Button bg="blue" shadow="md" hoverShadow>
               see my work
             </Button>
-          </a>
+          </ElementLink>
         </div>
       </div>
     </div>

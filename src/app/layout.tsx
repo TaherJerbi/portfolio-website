@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Quicksand } from "@next/font/google";
+import { ScrollIntoViewClientComponent } from "@/hooks/scroll-into-view";
 
 const font = Quicksand();
 
@@ -15,7 +16,10 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <ScrollIntoViewClientComponent />
+        {children}
+      </body>
     </html>
   );
 }

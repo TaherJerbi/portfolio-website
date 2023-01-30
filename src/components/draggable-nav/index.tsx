@@ -2,10 +2,12 @@
 
 import WindowCard from "@/components/window-card";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MessageCircle } from "react-feather";
 import FloatingDragContainer from "@/components/floating-drag-container";
 import Button from "../button";
+import { ElementLink } from "../element-link";
+import { usePathname } from "next/navigation";
 export default function DraggableNav() {
   const [open, setOpen] = useState(true);
   const onOpen = () => {
@@ -56,30 +58,30 @@ export default function DraggableNav() {
       >
         <WindowCard drag title="Drag Me!" onClose={onClose} variant="dark">
           <div className="w-full h-[70%] flex-grow flex flex-col justify-start items-stretch text-center font-bold">
-            <a
-              href="#presentation"
+            <ElementLink
+              id="presentation"
               className=" border-b-2 flex items-center justify-center border-brand-blue-dark h-[25%] hover:bg-brand-green-light transition duration-100 ease-in-out"
             >
               Presentation
-            </a>
-            <a
-              href="#about"
+            </ElementLink>
+            <ElementLink
+              id="about"
               className=" border-b-2 flex items-center justify-center border-brand-blue-dark h-[25%] hover:bg-brand-green-light transition duration-100 ease-in-out"
             >
               About
-            </a>
-            <a
-              href="#projects"
+            </ElementLink>
+            <ElementLink
+              id="projects"
               className=" border-b-2 flex items-center justify-center border-brand-blue-dark h-[25%] hover:bg-brand-green-light transition duration-100 ease-in-out"
             >
               Projects
-            </a>
-            <a
-              href="#contact"
+            </ElementLink>
+            <ElementLink
+              id="contact"
               className="border-b-2 flex items-center justify-center border-brand-blue-dark h-[25%] hover:bg-brand-green-light transition duration-100 ease-in-out"
             >
               Contact
-            </a>
+            </ElementLink>
           </div>
           <div className="w-full py-3 h-[30%] flex justify-center items-center">
             <Button

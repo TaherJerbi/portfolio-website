@@ -42,7 +42,7 @@ export default function WindowCard({
             <div
               onClick={onClose}
               className={classList(
-                "rounded-full flex justify-center items-center w-5 h-5 border-4 bg-brand-red cursor-pointer",
+                "rounded-full flex justify-center items-center w-5 h-5 border-2 bg-brand-red cursor-pointer",
                 variant === "dark"
                   ? "border-brand-beige-light"
                   : "border-brand-blue-dark"

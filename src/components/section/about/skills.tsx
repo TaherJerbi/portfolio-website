@@ -4,7 +4,7 @@ import Button from "@/components/button";
 import { SkillProficiencyCircle } from "@/components/skill-card/skill-proficiency-circle";
 import SkillGrid from "@/components/skill-grid";
 import { Tooltip } from "@/components/tooltip";
-import { SKILLS } from "@/data";
+import SKILLS from "@/data/skills";
 import { SkillProficiency } from "@/utils/types";
 import { useMemo, useState } from "react";
 import { BarChart } from "react-feather";

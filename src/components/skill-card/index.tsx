@@ -15,7 +15,7 @@ export default function SkillCard({ skill, onClick }: SkillCardProps) {
       <div className="absolute right-2 top-2">
         <SkillProficiencyCircle proficiency={skill.proficiency} />
       </div>
-      <p className="text-md font-bold text-brand-blue px-5 py-2 transition 0.5s ease-in-out">
+      <p className="text-sm font-bold text-brand-blue px-5 py-2 transition 0.5s ease-in-out">
         {skill.title}
       </p>
     </div>

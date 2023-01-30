@@ -27,11 +27,26 @@ export function ProjectSection({
         <div className="flex space-x-5 items-center mb-8 flex-wrap space-y-2">
           <div>
             <Link href={`/projects/${project.id}`}>
-              <h1 className="text-2xl font-bold hover:underline">
+              <h1
+                className={classList(
+                  {
+                    "text-2xl hover:underline": variant === "summary",
+                    "text-5xl": variant === "full",
+                  },
+                  "font-bold"
+                )}
+              >
                 {project.title}
               </h1>
             </Link>
-            <p>{project.date}</p>
+            <p
+              className={classList({
+                "text-sm": variant === "summary",
+                "text-xl": variant === "full",
+              })}
+            >
+              {project.date}
+            </p>
           </div>
           <div className="flex space-x-5">
             {project.liveUrl && (
@@ -64,7 +79,7 @@ export function ProjectSection({
         {variant === "full" &&
           project.sections.map((section) => (
             <div key={section.title} className={"text-xl leading-relaxed"}>
-              <h2 className="text-xl font-bold">- {section.title}</h2>
+              <h2 className="text-3xl mb-2 mt-5 font-bold">{section.title}</h2>
               {typeof section.description === "string" ? (
                 <p className="text-xl leading-relaxed">{section.description}</p>
               ) : (

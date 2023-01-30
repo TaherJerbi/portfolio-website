@@ -19,7 +19,7 @@ function ProjectPage({ params }: { params: { id: string } }) {
           </p>
         </Link>
       </div>
-      <ProjectSection variant="full" project={project} />;
+      <ProjectSection variant="full" project={project} />
     </div>
   );
 }

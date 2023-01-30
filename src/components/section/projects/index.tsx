@@ -31,7 +31,7 @@ export function ProjectSection({
                 className={classList(
                   {
                     "text-2xl hover:underline": variant === "summary",
-                    "text-5xl": variant === "full",
+                    "text-3xl lg:text-5xl": variant === "full",
                   },
                   "font-bold"
                 )}
@@ -79,7 +79,9 @@ export function ProjectSection({
         {variant === "full" &&
           project.sections.map((section) => (
             <div key={section.title} className={"text-xl leading-relaxed"}>
-              <h2 className="text-3xl mb-2 mt-5 font-bold">{section.title}</h2>
+              <h2 className="text-2xl lg:text-3xl mb-2 mt-5 font-bold">
+                {section.title}
+              </h2>
               {typeof section.description === "string" ? (
                 <p className="text-xl leading-relaxed">{section.description}</p>
               ) : (

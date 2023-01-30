@@ -1,19 +1,21 @@
+import Link from "next/link";
 import { GitHub } from "react-feather";
 import Button from "../button";
+import { ElementLink } from "../element-link";
 
 export default function Nav() {
   return (
     <nav className="hidden md:flex justify-between md:w-3/4 md:mx-auto  pt-12 text-2xl text-brand-blue ">
       <div className="flex space-x-12">
-        <a className="hover:underline font-semibold" href={"#about"}>
+        <ElementLink className="hover:underline font-semibold" id="about">
           about
-        </a>
-        <a className="hover:underline font-semibold" href={"#projects"}>
+        </ElementLink>
+        <ElementLink className="hover:underline font-semibold" id="projects">
           projects
-        </a>
-        <a className="hover:underline font-semibold" href={"#contact"}>
+        </ElementLink>
+        <ElementLink className="hover:underline font-semibold" id="#contact">
           contact
-        </a>
+        </ElementLink>
       </div>
       <div className="flex space-x-5 items-center">
         <a

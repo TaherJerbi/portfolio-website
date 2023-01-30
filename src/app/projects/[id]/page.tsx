@@ -1,4 +1,3 @@
-import Button from "@/components/button";
 import { ProjectSection } from "@/components/section/projects";
 import { PROJECTS } from "@/data";
 import Link from "next/link";

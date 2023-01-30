@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Quicksand } from "@next/font/google";
 import { ScrollIntoViewClientComponent } from "@/hooks/scroll-into-view";
+import AnalyticsWrapper from "@/components/analytics";
 
 const font = Quicksand();
 
@@ -17,6 +18,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
+        <AnalyticsWrapper />
         <ScrollIntoViewClientComponent />
         {children}
       </body>

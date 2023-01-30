@@ -3,8 +3,8 @@ import Link from "next/link";
 
 function ProjectsPage() {
   return (
-    <div>
-      <div className="mt-10 px:10 lg:px-40">
+    <div className="bg-brand-beige-light">
+      <div className="pt-10 px:10 lg:px-40">
         <Link href={`/`}>
           <p className="text-xl py-5 font-bold hover:underline">{"< Home"}</p>
         </Link>

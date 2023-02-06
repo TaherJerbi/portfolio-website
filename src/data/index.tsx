@@ -203,12 +203,12 @@ export const PROJECTS: Project[] = [
       {
         title: "Purpose of this project",
         description:
-          "The goal was to demonstrate our understanding and application of web development concepts using Angular.js, TypeScript, and Nest.js in a team project. We were also required to use a database and a REST API. We chose to use PostgreSQL and TypeORM for the database and Nest.js for the REST API.",
+          "The goal was to demonstrate our understanding and application of web development concepts using Angular, TypeScript, and Nest.js in a team project. We were also required to use a database and a REST API. We chose to use PostgreSQL and TypeORM for the database and Nest.js for the REST API.",
       },
       {
         title: "What I learned",
         description:
-          "This was my first complete #angular project, and through it, I learned a lot about Angular, reactive programming with #rxjs, and gained practical experience with #nestjs in the backend.",
+          "This was my first complete Angular project, and through it, I learned a lot about Angular, reactive programming with RxJS, and gained practical experience with NestJS in the backend.",
       },
       {
         title: "Team",

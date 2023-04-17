@@ -124,7 +124,7 @@ export const PROJECTS: Project[] = [
         ),
       },
     ],
-    liveUrl: "https://sanibains-next.vercel.app/",
+    liveUrl: "https://www.sanibains.com/",
     desktopImageUrl: "/assets/images/sanibains.desktop.png",
     mobileImageUrl: "/assets/images/sanibains.mobile.png",
   },

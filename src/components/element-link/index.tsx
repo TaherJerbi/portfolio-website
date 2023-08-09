@@ -13,8 +13,9 @@ export function ElementLink({
   const router = useRouter();
 
   const onClick = () => {
-    router.push(`#${id}`);
+    router.replace(`#${id}`);
     const element = document.querySelector(`#${id}`);
+    console.log(element);
     if (!element) return;
     element.scrollIntoView({ behavior: "smooth" });
   };

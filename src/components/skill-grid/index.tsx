@@ -6,13 +6,14 @@ import { motion } from "framer-motion";
 import SkillCard from "@/components/skill-card";
 import { useEffect, useState } from "react";
 
+type SkillGridProps = {
+	skills: Skill[];
+	highlightedProficiency?: SkillProficiency;
+};
 function SkillGrid({
   skills,
   highlightedProficiency,
-}: {
-  skills: Skill[];
-  highlightedProficiency?: SkillProficiency;
-}) {
+}: SkillGridProps) {
   const [internalSkills, setSkills] = useState(skills);
   const setCurrentTop = (id: string) => {
     const skill = internalSkills.findIndex((skill) => skill.id === id);

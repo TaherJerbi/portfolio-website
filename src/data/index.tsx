@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Project, Skill, SkillProficiency } from "@/utils/types";
 import SKILLS from "./skills";
 

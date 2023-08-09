@@ -11,7 +11,6 @@ export function ElementLink({
 }) {
 
   const onClick = () => {
-    window.history.replaceState(null, "", `#${id}`);
     const element = document.querySelector(`#${id}`);
     if (!element) return;
     element.scrollIntoView({ behavior: "smooth" });

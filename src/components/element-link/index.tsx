@@ -1,5 +1,4 @@
 "use client";
-import { useRouter } from "next/navigation";
 
 export function ElementLink({
   id,
@@ -10,10 +9,8 @@ export function ElementLink({
   className?: string;
   children: React.ReactNode;
 }) {
-  const router = useRouter();
 
   const onClick = () => {
-    router.replace(`#${id}`);
     const element = document.querySelector(`#${id}`);
     console.log(element);
     if (!element) return;

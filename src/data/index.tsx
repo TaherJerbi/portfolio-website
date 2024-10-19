@@ -157,9 +157,41 @@ export const PROJECTS: Project[] = [
           "The client needed a platform to provide an engaging and interactive experience for users. The goal was to create a reliable and functional app with performance optimization, mobile-responsiveness and visually appealing designs.",
       },
       {
+        title: "Client Feedback",
+        description: (
+          <div>
+            <p>
+              The client was very satisfied with the final product and the
+              quality of the code. They appreciated the attention to detail and
+              the effort put into the project. The client even left a positive 5
+              star review on Upwork!
+            </p>
+            <a
+              href="https://www.upwork.com/freelancers/~01406a12eb79ae2263"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="hover:shadow-brand-lg transition-all duration-100 my-5 mx-auto w-1/2"
+                src="/assets/images/watcherly-feedback.png"
+                alt="watcherly"
+              />
+            </a>
+          </div>
+        ),
+      },
+      {
         title: "What I learned",
-        description:
-          "I gained experience in writing GraphQL resolvers with the Prisma ORM, converting designs to pixel-perfect components, test-driven development, working with a postgresql database, converting front-end code to Typescript, and setting up graphql-codegen for automatic type generation. These skills improved my understanding of scalable and safe coding practices.",
+        description: (
+          <p>
+            I gained experience in writing GraphQL resolvers with the Prisma
+            ORM, converting designs to pixel-perfect components, test-driven
+            development, working with a postgresql database, converting
+            front-end code to Typescript, and setting up graphql-codegen for
+            automatic type generation. These skills improved my understanding of
+            scalable and safe coding practices.,
+          </p>
+        ),
       },
     ],
     liveUrl: "https://watcherly.club",

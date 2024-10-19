@@ -7,13 +7,22 @@ export default function Nav() {
   return (
     <nav className="hidden md:flex justify-between md:w-3/4 md:mx-auto  pt-12 text-2xl text-brand-blue ">
       <div className="flex space-x-12">
-        <ElementLink className="hover:underline font-semibold" id="about">
+        <ElementLink
+          className="hover:underline font-semibold cursor-pointer"
+          id="about"
+        >
           about
         </ElementLink>
-        <ElementLink className="hover:underline font-semibold" id="projects">
+        <ElementLink
+          className="hover:underline font-semibold cursor-pointer"
+          id="projects"
+        >
           projects
         </ElementLink>
-        <ElementLink className="hover:underline font-semibold" id="#contact">
+        <ElementLink
+          className="hover:underline font-semibold cursor-pointer"
+          id="contact"
+        >
           contact
         </ElementLink>
       </div>

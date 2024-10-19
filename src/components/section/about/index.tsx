@@ -28,8 +28,8 @@ export default function About() {
                   <p className="text-lg leading-8">
                     I solve problems for a living. I enjoy exploring various
                     areas of technology, including creative coding, AI, and
-                    cybersecurity. I'm always excited to learn and apply new
-                    skills to tackle challenges.
+                    cybersecurity. I&apos;m always excited to learn and apply
+                    new skills to tackle challenges.
                   </p>
                 </div>
               </div>

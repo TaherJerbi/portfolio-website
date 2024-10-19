@@ -7,7 +7,7 @@ export default function Presentation() {
       <div>
         <Image
           className="shadow-brand-md border-brand-blue-dark border-4 rounded-xl my-10 md:mr-10 md:my-0"
-          src={"/assets/images/me.jpeg"}
+          src={"/assets/images/linkedin-pdp.jpg"}
           width={300}
           height={300}
           alt={""}

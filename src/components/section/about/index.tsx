@@ -15,22 +15,21 @@ export default function About() {
                 <div className="space-y-5">
                   <p className="text-2xl font-bold">Who I Am</p>
                   <p className="text-lg leading-8">
-                    As a Junior Developer based in{" "}
-                    <span className="font-bold text-brand-red">Tunisia</span>, I
-                    bring two years of experience in freelance web development
-                    to the table. In addition, I am currently pursuing a degree
-                    in <span className="font-bold">Software Engineering</span>{" "}
-                    at the National Institute of Applied Science and Technology
-                    (INSAT) in Tunis, with an expected graduation date of
-                    February 2024.
+                    I am a Software Engineering graduate from{" "}
+                    <span className="text-red-600 font-bold">Tunisia 🇹🇳</span>{" "}
+                    with 3 years of full-stack development experience. I am
+                    skilled in designing, building, and deploying web
+                    applications and am eager to make an impact while continuing
+                    to grow as an engineer.
                   </p>
                 </div>
                 <div className="space-y-5 mt-5">
                   <p className="text-2xl font-bold">What I Do</p>
                   <p className="text-lg leading-8">
-                    I write code. A lot… My main focus right now is building web
-                    applications with React and Typescript. I am always looking
-                    to learn new things, and I am currently diving into Rust.
+                    I solve problems for a living. I enjoy exploring various
+                    areas of technology, including creative coding, AI, and
+                    cybersecurity. I'm always excited to learn and apply new
+                    skills to tackle challenges.
                   </p>
                 </div>
               </div>

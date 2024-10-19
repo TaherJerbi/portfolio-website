@@ -2,13 +2,18 @@ import { Skill, SkillProficiency } from "@/utils/types";
 
 const SKILLS: Skill[] = [
   {
+    title: "Vue.js",
+    proficiency: SkillProficiency.Advanced,
+    id: "vuejs",
+  },
+  {
     title: "React",
-    proficiency: SkillProficiency.Expert,
+    proficiency: SkillProficiency.Advanced,
     id: "react",
   },
   {
     title: "Typescript",
-    proficiency: SkillProficiency.Advanced,
+    proficiency: SkillProficiency.Expert,
     id: "typescript",
   },
   {
@@ -117,6 +122,11 @@ const SKILLS: Skill[] = [
     id: "java",
   },
   {
+    title: "Spring Boot",
+    proficiency: SkillProficiency.Intermediate,
+    id: "spring-boot",
+  },
+  {
     title: "C / C++",
     proficiency: SkillProficiency.Intermediate,
     id: "c",
@@ -145,6 +155,16 @@ const SKILLS: Skill[] = [
     title: "NestJS",
     proficiency: SkillProficiency.Intermediate,
     id: "nestjs",
+  },
+  {
+    title: "Flyway",
+    proficiency: SkillProficiency.Intermediate,
+    id: "flyway",
+  },
+  {
+    title: "Docker",
+    proficiency: SkillProficiency.Advanced,
+    id: "docker",
   },
 ];
 

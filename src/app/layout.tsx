@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Quicksand } from "@next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ScrollIntoViewClientComponent } from "@/hooks/scroll-into-view";
 import AnalyticsWrapper from "@/components/analytics";
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         <AnalyticsWrapper />
         <ScrollIntoViewClientComponent />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

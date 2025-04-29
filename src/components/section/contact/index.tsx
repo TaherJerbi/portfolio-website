@@ -45,9 +45,6 @@ function Contact() {
             <Upwork className="w-7 h-7" />
             <p className="underline">Upwork Profile</p>
           </a>
-          <div className="flex items-center space-x-5">
-            <Phone className="w-7 h-7" /> <p>+216 53 155 029</p>
-          </div>
         </div>
       </div>
       {/* contact form */}

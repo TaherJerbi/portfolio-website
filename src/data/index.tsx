@@ -38,58 +38,58 @@ export const PROJECTS: Project[] = [
   //   ],
   //   githubUrl: "https://github.com/TaherJerbi/portfolio-website",
   // },
-  {
-    id: "2",
-    title: "Design Curated",
-    date: "2022",
-    description:
-      "Next.js app with a GraphQL backend that allows you to search images from the Unsplash API.",
-    skills: getSkillsByIds([
-      "react",
-      "typescript",
-      "nextjs",
-      "graphql",
-      "nodejs",
-      "expressjs",
-      "apollo",
-    ]),
-    sections: [
-      {
-        title: "Purpose of this project",
-        description:
-          "This was an initial trial for an Upwork client that allowed me to demonstrate my skills as a React and Node.js developer. It also allowed me to get familiar with the tech stack the client needed.",
-      },
-      {
-        title: "What I learned",
-        description: (
-          <ul>
-            <li>
-              - I learned how to use{" "}
-              <span className="font-bold">Chakra UI</span>
-            </li>
-            <li>
-              - This was my first <span className="font-bold">GraphQL</span>{" "}
-              project, I learned:
-              <ul className="ml-10 list-disc">
-                <li>
-                  Create a graphql server from scratch using express and Apollo
-                  Server.
-                </li>
-                <li>
-                  Connect to a graphql server from the client using Apollo
-                  Client.
-                </li>
-              </ul>
-            </li>
-          </ul>
-        ),
-      },
-    ],
-    liveUrl: "https://designcurated-frontend.vercel.app/",
-    githubUrl: "https://github.com/TaherJerbi/designcurated-frontend",
-    desktopImageUrl: "/assets/images/designcurated.desktop.png",
-    mobileImageUrl: "/assets/images/designcurated.mobile.png",
-  },
+  // {
+  //   id: "2",
+  //   title: "Design Curated",
+  //   date: "2022",
+  //   description:
+  //     "Next.js app with a GraphQL backend that allows you to search images from the Unsplash API.",
+  //   skills: getSkillsByIds([
+  //     "react",
+  //     "typescript",
+  //     "nextjs",
+  //     "graphql",
+  //     "nodejs",
+  //     "expressjs",
+  //     "apollo",
+  //   ]),
+  //   sections: [
+  //     {
+  //       title: "Purpose of this project",
+  //       description:
+  //         "This was an initial trial for an Upwork client that allowed me to demonstrate my skills as a React and Node.js developer. It also allowed me to get familiar with the tech stack the client needed.",
+  //     },
+  //     {
+  //       title: "What I learned",
+  //       description: (
+  //         <ul>
+  //           <li>
+  //             - I learned how to use{" "}
+  //             <span className="font-bold">Chakra UI</span>
+  //           </li>
+  //           <li>
+  //             - This was my first <span className="font-bold">GraphQL</span>{" "}
+  //             project, I learned:
+  //             <ul className="ml-10 list-disc">
+  //               <li>
+  //                 Create a graphql server from scratch using express and Apollo
+  //                 Server.
+  //               </li>
+  //               <li>
+  //                 Connect to a graphql server from the client using Apollo
+  //                 Client.
+  //               </li>
+  //             </ul>
+  //           </li>
+  //         </ul>
+  //       ),
+  //     },
+  //   ],
+  //   liveUrl: "https://designcurated-frontend.vercel.app/",
+  //   githubUrl: "https://github.com/TaherJerbi/designcurated-frontend",
+  //   desktopImageUrl: "/assets/images/designcurated.desktop.png",
+  //   mobileImageUrl: "/assets/images/designcurated.mobile.png",
+  // },
   {
     id: "3",
     title: "Sanibains",
